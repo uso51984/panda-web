@@ -1,0 +1,35 @@
+module.exports = {
+  "cacheDirectory": "./node_modules/.cache",
+  "verbose": true,
+  "globals": {
+    "__STATIC__": true,
+    "__DEV__": false,
+    "__TESTING__": true,
+    "__TESTINGHOST__": "localhost",
+    "__TESTINGPORT__": 3332
+  },
+  clearMocks: true,
+  collectCoverage: true,
+  "coverageDirectory": "test/coverage",
+  "coverageThreshold": {
+    "global": {
+      "branches": 96,
+      "functions": 97,
+      "lines": 98,
+      "statements": 98
+    }
+  },
+  "testPathIgnorePatterns": [
+    "/build/",
+    "/etc/",
+    "/node_modules/",
+  ],
+
+  "roots": [
+    "<rootDir>/test/",
+    "<rootDir>/src/"
+  ],
+  "setupFiles": [
+    "<rootDir>/test/setup.jest.js"
+  ]
+};

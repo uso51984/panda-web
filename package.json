@@ -1,0 +1,41 @@
+{
+  "name": "panda-web",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./build/webpack.dev.js",
+    "build": "webpack --config ./build/webpack.pro.js",
+    "lint-staged:js": "eslint --ext .js,.jsx ",
+    "lint:fix": "eslint --fix --cache --ext .js,.jsx --format=pretty ./src && npm run lint:style",
+    "lint:js": "eslint --cache --ext .js,.jsx --format=pretty ./src",
+    "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "test:watch": "jest --watch"
+  },
+  "author": "chenjianbin",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@babel/preset-react": "^7.10.4",
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.1.0",
+    "code-rule": "git+ssh://git@github.com:uso51984/code-rule.git#0.0.1",
+    "cross-env": "^7.0.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.3",
+    "html-webpack-plugin": "^4.3.0",
+    "jest": "^26.4.0",
+    "mini-css-extract-plugin": "^0.10.0",
+    "progress-bar-webpack-plugin": "^2.1.0",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "babel-jest": "^26.3.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
