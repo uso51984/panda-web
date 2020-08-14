@@ -10,6 +10,7 @@
     "lint:fix": "eslint --fix --cache --ext .js,.jsx --format=pretty ./src && npm run lint:style",
     "lint:js": "eslint --cache --ext .js,.jsx --format=pretty ./src",
     "lint:style": "stylelint --fix \"src/**/*.less\" --syntax less",
+    "build:i18n": "babel-node build/i18n/index.js",
     "test:watch": "jest --watch"
   },
   "author": "chenjianbin",
@@ -34,8 +35,16 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "babel-cli": "^6.26.0",
     "babel-jest": "^26.3.0",
+    "dva": "^2.4.1",
+    "dva-loading": "^3.0.20",
+    "history": "^5.0.0",
+    "lodash": "^4.17.20",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-intl": "^5.6.0",
+    "react-redux": "^7.2.1",
+    "react-router-dom": "^5.2.0"
   }
 }
