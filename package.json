@@ -28,6 +28,7 @@
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.4.0",
     "mini-css-extract-plugin": "^0.10.0",
+    "mockjs": "^1.1.0",
     "progress-bar-webpack-plugin": "^2.1.0",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.44.1",
@@ -35,6 +36,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "babel-cli": "^6.26.0",
     "babel-jest": "^26.3.0",
     "dva": "^2.4.1",

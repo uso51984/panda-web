@@ -5,13 +5,25 @@ import createLoading from 'dva-loading';
 import { createBrowserHistory } from 'history';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import { injectIntl, IntlProvider, FormattedRelative, useIntl } from 'react-intl';
+import axios from 'axios';
 import Home from './pages/Home';
+
+import '../mock'
 
 const rootRouter = [
   { path: '/about', exact: true, component: Home },
   { path: '/', exact: true, component: ()=> 'Home2' },
   { path: '/dasbashd', exact: true, component: ()=> 'Home3' }
 ];
+
+// 为给定 ID 的 user 创建请求
+axios.get('/test2323')
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
 
 
 const Router = () => (
@@ -48,7 +60,7 @@ app.router(Router)
 app.use(createLoading());
 app.start('#root')
 
-
+console.log('app', app);
 // ReactDOM.render(
 //   <Example />,
 //   document.getElementById('root'),
