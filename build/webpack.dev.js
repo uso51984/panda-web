@@ -54,6 +54,7 @@ module.exports = () => {
     resolveLoader: getWebpackCommonConfig.getResolveLoader(),
     entry,
     output: {
+      publicPath: '/',
       path: resolveCwd('dist'),
       filename: '[name].[chunkhash].js'
     },

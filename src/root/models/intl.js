@@ -1,10 +1,9 @@
 import { testGetRequest } from 'services/sign';
-import { fromJS } from 'immutable';
-import intlHelper from './utils/intlHelper';
+import intlHelper from 'shared/utils/intlHelper';
 
 const { getMessages } = intlHelper;
 
-const Model = {
+const intl = {
   namespace: 'intl',
   state: getMessages(),
 
@@ -29,4 +28,4 @@ const Model = {
   },
 };
 
-export default Model;
+export default intl;
