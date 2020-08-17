@@ -1,0 +1,92 @@
+import axios from 'axios';
+import ContentType from './consts/ContentType';
+import processHeaders from './processHeaders';
+import RequestReponse from './RequestReponse';
+import { ErrorObj, ErrorType } from './error';
+import httpErrorMessage from './consts/httpErrorMessage';
+
+export { axios };
+
+export default function request(path, method, data, config = {}) {
+  let { headers = {} } = config;
+  delete config.headers;
+
+  let params = {};
+  if (data) {
+    if (data.body) {
+      headers = data.headers || {};
+      params = data.body;
+    } else {
+      params = data;
+    }
+  }
+
+  const axiosConfig = {
+    method,
+    url: path,
+    data: params,
+    headers: processHeaders(method, headers),
+    ...config,
+  };
+
+  if (axiosConfig.headers['Content-Type'] !== ContentType.JSON) {
+    params.ui_random = new Date().getTime();
+    axiosConfig.params = params;
+    delete axiosConfig.data;
+  }
+
+  return axios(axiosConfig)
+    .then((response) => {
+      const resData = RequestReponse.parseResponseData(response.data);
+      if (RequestReponse.isSuccess(resData.code)) {
+        RequestReponse.success();
+        return resData;
+      }
+
+      return Promise.reject(response);
+    })
+    .catch((result) => {
+      if (axios.isCancel(result)) {
+        const error = { result, title: 'Cancel Request', code: 'canceled' };
+        return Promise.reject(error);
+      }
+
+      const response = new RequestReponse(result.response || result);
+      const { status } = response;
+
+      if (response.isHttpError) {
+        const code = status || 'failed';
+        const errorObj = new ErrorObj(ErrorType.HTTP, 'HTTP Error', {
+          message: response.message || httpErrorMessage[status] || '',
+          code,
+          url: path,
+          response
+        });
+
+        RequestReponse.httpError(errorObj);
+        return Promise.reject(errorObj);
+      }
+
+      if (response.isSystemError) {
+        const errorObj = new ErrorObj(ErrorType.SERVICE, 'Service Error', {
+          message: response.message || '',
+          code: response.code,
+          url: path,
+          response
+        });
+        RequestReponse.systemError(errorObj);
+
+        return Promise.reject(errorObj);
+      }
+
+      const errorObj = new ErrorObj(ErrorType.APP, 'Business Error', {
+        message: response.message || '',
+        code: response.code,
+        url: path,
+        response
+      });
+
+      RequestReponse.businessError(errorObj);
+      return Promise.reject(errorObj);
+    });
+}

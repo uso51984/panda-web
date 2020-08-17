@@ -1,9 +1,24 @@
 
+const webpack = require('webpack');
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const getWebpackCommonConfig = require('./sections/webpackCommonConfig');
-const plugins = [new ProgressBarPlugin()];
+
+const env = process.env.NODE_ENV || 'development';
+const definitions = {
+  'process.env.NODE_ENV': JSON.stringify(env),
+  NODE_ENV: JSON.stringify(env),
+  __STATIC__: env === 'static',
+  __DEV__: env === 'development',
+  __PRODUCTION__: env === 'production',
+  __TESTING__: env === 'test',
+  __TESTINGHOST__: '',
+  __TESTINGPORT__: ''
+};
+
+const DefinePlugin = new webpack.DefinePlugin(definitions)
+const plugins = [new ProgressBarPlugin(), DefinePlugin];
 
 function resolveCwd(...args) {
   args.unshift(process.cwd());
@@ -29,7 +44,7 @@ const entry = {
   ],
 }
 
-for (let key in entry) {
+for (const key in entry) {
   setHtmlWebpackPlugin(key)
 }
 

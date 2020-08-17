@@ -1,10 +1,16 @@
 import React from 'react';
-import { injectIntl, useIntl } from 'react-intl';
+import { injectIntl } from 'react-intl';
+import { testGetRequest } from 'services/sign';
 
-const Home = (props) => {
-  console.log('props', props);
-  const intl = useIntl();
-  console.log('intl', intl);
+
+const Home = () => {
+  const data = testGetRequest({name: 'afsadf', age: '大是大非'})
+
+  // testPut({id: 23}, {name: 'afsadf', age: '大是大非'});
+  // testPost().catch(()=>{
+  //   console.log('23333333')
+  // });
+
   return (
     <div>
       asdfsafd

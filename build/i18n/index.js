@@ -1,7 +1,7 @@
 import fs from 'fs';
 import glob from 'glob';
 import flatten from 'lodash/flatten';
-import { transform } from 'babel-core';
+import { transform } from '@babel/core';
 import locales from '../../i18n/locales';
 
 const TARGET_DIRETORY = 'src/**/*.js';
@@ -19,10 +19,9 @@ const extract = path => new Promise((resolve, reject) => {
     return readFile(path).then(code => resolve(transform(code, {
       plugins: [
         'react-intl',
-        'transform-runtime',
-        'add-module-exports'
+        '@babel/plugin-transform-runtime'
       ],
-      presets: ['react', 'es2015', 'stage-1']
+      presets: ['@babel/preset-env', '@babel/preset-react']
     }).metadata['react-intl'].messages), error => reject(error));
   } catch (error) {
     process.stderr.write(`Error transforming file: ${path}\n${error}`);

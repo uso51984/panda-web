@@ -1,18 +1,12 @@
 
-'use strict';
-module.exports = function (modules) {
+module.exports = (modules) => {
   const plugins = [
-    // require.resolve('@babel/plugin-transform-object-assign'),
-    // require.resolve('@babel/plugin-transform-spread'),
-    // require.resolve('@babel/plugin-proposal-export-namespace-from'),
-    // require.resolve('@babel/plugin-proposal-object-rest-spread'),
-    // require.resolve('@babel/plugin-proposal-class-properties'),
-    // [
-    //   require.resolve('@babel/plugin-transform-runtime'),
-    //   {
-    //     help: false,
-    //   },
-    // ]
+    [
+      require.resolve('@babel/plugin-transform-runtime'),
+      {
+        help: false,
+      },
+    ]
   ];
 
   return {
@@ -21,7 +15,7 @@ module.exports = function (modules) {
       [
         '@babel/preset-env',
         {
-          modules: modules,
+          modules,
           exclude: ['transform-typeof-symbol'],
         },
       ],

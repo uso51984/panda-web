@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --config ./build/webpack.dev.js",
-    "build": "webpack --config ./build/webpack.pro.js",
+    "start": "cross-env NODE_ENV=static webpack-dev-server --config ./build/webpack.dev.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.pro.js",
     "lint-staged:js": "eslint --ext .js,.jsx ",
     "lint:fix": "eslint --fix --cache --ext .js,.jsx --format=pretty ./src && npm run lint:style",
     "lint:js": "eslint --cache --ext .js,.jsx --format=pretty ./src",
@@ -17,14 +18,18 @@
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.11.1",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.11.0",
     "@babel/preset-env": "^7.11.0",
     "@babel/preset-react": "^7.10.4",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
+    "babel-plugin-react-intl": "^8.1.1",
     "code-rule": "git+ssh://git@github.com:uso51984/code-rule.git#0.0.1",
     "cross-env": "^7.0.2",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.3",
+    "eslint-import-resolver-webpack": "^0.12.2",
     "html-webpack-plugin": "^4.3.0",
     "jest": "^26.4.0",
     "mini-css-extract-plugin": "^0.10.0",
@@ -39,14 +44,12 @@
     "axios": "^0.19.2",
     "babel-cli": "^6.26.0",
     "babel-jest": "^26.3.0",
-    "dva": "^2.4.1",
+    "dva": "^2.6.0-beta.20",
     "dva-loading": "^3.0.20",
-    "history": "^5.0.0",
+    "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.20",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-intl": "^5.6.0",
-    "react-redux": "^7.2.1",
-    "react-router-dom": "^5.2.0"
+    "react-intl": "^5.6.0"
   }
 }

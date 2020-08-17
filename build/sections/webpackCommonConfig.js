@@ -1,6 +1,5 @@
 
 
-'use strict';
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require('autoprefixer');
@@ -8,13 +7,12 @@ const autoprefixer = require('autoprefixer');
 const getBabelCommonConfig = require('./getBabelCommonConfig');
 
 const autoprefixerConfig = autoprefixer({
-  remove: false,
-  browsers: ['Android >= 4.0', 'iOS >= 7']
+  remove: false
 });
 
 function getResolve() {
   const resolve = {
-    modules: [process.cwd(), 'node_modules'],
+    modules: [process.cwd(), 'src', 'node_modules'],
     extensions: ['.js', '.jsx']
   };
 
