@@ -21,7 +21,9 @@ module.exports = {
     "operator-assignment": 0,
     "no-param-reassign": 0,
     "import/no-extraneous-dependencies": 0,
-    "react/no-array-index-key": 0
+    "react/no-array-index-key": 0,
+    "func-names": 0,
+    "arrow-body-style": [2, "as-needed"]
   },
   settings: {
     'import/resolver': {

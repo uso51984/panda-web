@@ -1,14 +1,6 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
+import BasicLayout from './BasicLayout';
 
-class SecurityLayout extends React.Component {
-  render() {
-    if (window.location.pathname === '/') {
-      return <Redirect to='user/signIn' />;
-    }
-
-    return 'SecurityLayout'
-  }
-}
+const SecurityLayout = () => (<BasicLayout />)
 
 export default SecurityLayout;

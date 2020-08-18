@@ -2,11 +2,16 @@ import React from 'react';
 import { Route, Redirect, Switch } from 'react-router-dom';
 import location from 'shared/services/location';
 import SignIn from 'pages/User/SignIn';
-import ForgotPassword from 'pages/User/ForgotPassword';
+// import ForgotPassword from 'pages/User/ForgotPassword';
 import { FormattedDyncMessage } from 'shared/translation'
+import loadable from '@loadable/component'
+
+const ForgotPassword = loadable(() =>
+  import(/* webpackChunkName: 'forgotPassword' */ 'pages/User/ForgotPassword'), {
+  fallback: 'loading'
+})
 
 const { locationHelp, urls } = location;
-
 
 class BasicLayout extends React.Component {
   componentDidMount(){

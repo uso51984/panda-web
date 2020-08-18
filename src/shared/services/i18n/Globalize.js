@@ -1,4 +1,3 @@
-
 import moment from 'moment';
 import isNumber from 'lodash/isNumber';
 
@@ -83,8 +82,8 @@ class Globalize {
   }
 
   parseDateTime(dateTime, format) {
-    if (isNumber(dateTime)){
-      return moment(dateTime)
+    if (isNumber(dateTime)) {
+      return moment(dateTime);
     }
 
     return moment(dateTime, format || this.dateTimeFormat);

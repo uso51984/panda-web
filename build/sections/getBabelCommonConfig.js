@@ -4,12 +4,17 @@ module.exports = (modules) => {
     require.resolve('@babel/plugin-proposal-class-properties'),
     require.resolve('@babel/plugin-proposal-export-default-from'),
     require.resolve('@babel/plugin-proposal-export-namespace-from'),
+    require.resolve('@babel/plugin-syntax-dynamic-import'),
     [
       require.resolve('@babel/plugin-transform-runtime'),
       {
         help: false,
       },
-    ]
+    ],
+    ["import", {
+      "libraryName": "antd",
+      "style": true
+    }]
   ];
 
   return {

@@ -98,12 +98,18 @@ module.exports = {
 
     const lessLoader = cssLoader.concat([
       {
-        loader: 'less',
+        loader: 'less-loader',
         options: {
-          sourceMap: true,
-          javascriptEnabled: true
+          lessOptions: {
+            strictMath: false,
+            modifyVars: {
+              'font-size-base': 23
+              // 'ant-prefix': 'crm'
+            },
+            javascriptEnabled: true,
+          },
         },
-      },
+      }
     ]);
 
     if (extractCss) {

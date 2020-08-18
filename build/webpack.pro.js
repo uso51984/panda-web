@@ -60,7 +60,7 @@ module.exports = () => {
     output: {
       publicPath: '/',
       path: resolveCwd('dist'),
-      filename: '[name].js'
+      filename: '[name].[chunkhash:8].js'
     },
     module: {
       rules: getWebpackCommonConfig.getLoaders().concat(getWebpackCommonConfig.getCssLoaders(false)),
