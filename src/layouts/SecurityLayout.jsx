@@ -7,7 +7,7 @@ class SecurityLayout extends React.Component {
       return <Redirect to='user/signIn' />;
     }
 
-    return this.props.children
+    return 'SecurityLayout'
   }
 }
 

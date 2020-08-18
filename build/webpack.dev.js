@@ -18,7 +18,8 @@ const definitions = {
 };
 
 const DefinePlugin = new webpack.DefinePlugin(definitions)
-const plugins = [new ProgressBarPlugin(), DefinePlugin];
+const ReplacementPlugin = new webpack.ContextReplacementPlugin(/moment[/\\]locale$/, /zh/);
+const plugins = [new ProgressBarPlugin(), DefinePlugin, ReplacementPlugin];
 
 function resolveCwd(...args) {
   args.unshift(process.cwd());

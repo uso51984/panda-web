@@ -1,4 +1,4 @@
-import { createAPI, RequestReponse, httpMethod } from 'shared/common/restClient';
+import { createAPI, RequestReponse, httpMethod } from 'shared/services/restClient';
 
 RequestReponse.httpError = (Error) => {
   console.log('httpError', Error)

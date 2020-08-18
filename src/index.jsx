@@ -12,6 +12,9 @@ import UserLayout from 'layouts/UserLayout';
 import Home from 'pages/Home';
 
 import intlHelper from 'shared/utils/intlHelper';
+import location from 'shared/services/location'
+
+const { locationHelp } = location;
 
 const { getMessages } = intlHelper;
 
@@ -60,3 +63,7 @@ forEach(modles, (model)=> app.model(model))
 app.router(Router)
 app.use(createLoading());
 app.start('#root')
+
+// eslint-disable-next-line no-underscore-dangle
+locationHelp.initialize(app._store);
+
