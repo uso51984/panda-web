@@ -3,7 +3,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require('autoprefixer');
-
 const getBabelCommonConfig = require('./getBabelCommonConfig');
 
 const autoprefixerConfig = autoprefixer({
@@ -103,8 +102,7 @@ module.exports = {
           lessOptions: {
             strictMath: false,
             modifyVars: {
-              'font-size-base': 23
-              // 'ant-prefix': 'crm'
+              'ant-prefix': 'crm'
             },
             javascriptEnabled: true,
           },
