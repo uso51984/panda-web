@@ -16,7 +16,7 @@ if (__STATIC__) {
 const history = createBrowserHistory();
 
 locale.initialize();
-
+console.log('------localeinit')
 Globalize.locale = locale.currentLocale;
 
 const app = dva({

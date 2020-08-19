@@ -6,7 +6,6 @@ import { Link } from 'shared/components/RouterLink';
 import { location } from 'shared/services/location';
 import { testGetRequest } from 'services/sign';
 import selfMessages from './translations';
-
 import './index.less';
 
 

@@ -1,5 +1,6 @@
 import moment from 'moment';
 import isNumber from 'lodash/isNumber';
+import intlHelper from 'shared/utils/intlHelper';
 
 const createMoment = (value) => {
   if (value) {
@@ -113,6 +114,11 @@ class Globalize {
     const d1 = this.parseDate(start);
     const d2 = this.parseDate(end);
     return d1.isSame(d2, 'day');
+  }
+
+  translate(messageKey){
+    const currentLocaleMessages = intlHelper.getMessages()[this.currentLocale];
+    return currentLocaleMessages[messageKey];
   }
 }
 
