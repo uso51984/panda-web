@@ -1,34 +1,19 @@
 
-const path = require('path');
 const plugins = require('./sections/plugins');
 const getWebpackCommonConfig = require('./sections/webpackCommonConfig');
-
-function resolveCwd(...args) {
-  args.unshift(process.cwd());
-  return path.join(...args);
-};
-
-const entry = {
-  index: [
-    resolveCwd('src/index.jsx')
-  ],
-}
+const entry = require('./sections/entry');
+const output = require('./sections/output');
 
 module.exports = () => {
   return {
     devtool: '#source-map',
     resolveLoader: getWebpackCommonConfig.getResolveLoader(),
     entry,
-    output: {
-      publicPath: '/',
-      path: resolveCwd('dist'),
-      filename: '[name].[chunkhash:8].js',
-      chunkFilename: '[name].[contenthash:8].async.js'
-    },
+    output: output,
     module: {
       rules: getWebpackCommonConfig.getLoaders().concat(getWebpackCommonConfig.getCssLoaders(true)),
     },
-    resolve: getWebpackCommonConfig.getResolve(),
+    resolve: getWebpackCommonConfig.resolve,
     plugins,
     mode: 'production',
     performance: {

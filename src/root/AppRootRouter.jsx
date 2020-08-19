@@ -1,5 +1,5 @@
 import React from 'react';
-import { routerRedux, useStore } from 'dva';
+import { routerRedux } from 'dva';
 import { Route, Switch } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
 import { ConfigProvider } from 'antd';
@@ -14,8 +14,6 @@ const { ConnectedRouter } = routerRedux;
 
 const Router = (props) => {
   const { history } = props;
-  console.log('Globalize.locale', Globalize.locale);
-
   return (
     <IntlProvider locale={Globalize.locale} messages={getMessages()[Globalize.locale]}>
       <ConfigProvider prefixCls="crm">
@@ -23,7 +21,7 @@ const Router = (props) => {
           <Switch>
             <Route exact path="/" component={SecurityLayout} />
             <Route path="/user" component={UserLayout} />
-            <Route component={() => '404页面'} />
+            <Route component={() => '这个页面走丢了'} />
           </Switch>
         </ConnectedRouter>
       </ConfigProvider>

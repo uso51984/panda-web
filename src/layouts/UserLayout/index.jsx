@@ -4,23 +4,23 @@ import { Select } from 'antd';
 import { urls } from 'shared/services/location';
 import SignIn from 'pages/User/SignIn';
 // import ForgotPassword from 'pages/User/ForgotPassword';
-import { FormattedDyncMessage } from 'shared/translation'
-import loadable from '@loadable/component'
+import { FormattedDyncMessage } from 'shared/translation';
+import loadable from '@loadable/component';
 import LanguageSelect from 'shared/components/LanguageSelect';
-import Redirect from 'shared/components/Redirect'
-import './index.less'
+import { Redirect } from 'shared/components/RouterLink';
+import './index.less';
 
 const { Option } = Select;
 
 const ForgotPassword = loadable(() =>
   import(/* webpackChunkName: 'forgotPassword' */ 'pages/User/ForgotPassword'), {
   fallback: 'loading'
-})
+});
 
 class BasicLayout extends React.Component {
   handleChange = (value) => {
     locale.updateLocale(value);
-    console.log('languege change')
+    console.log('languege change');
   }
 
   render() {
@@ -41,7 +41,7 @@ class BasicLayout extends React.Component {
           </Switch>
         </div>
       </div>
-    )
+    );
   }
 }
 

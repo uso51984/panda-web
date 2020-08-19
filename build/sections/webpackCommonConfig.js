@@ -4,24 +4,16 @@ const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const autoprefixer = require('autoprefixer');
 const getBabelCommonConfig = require('./getBabelCommonConfig');
+const resolve = require('./resolve');
 
 const autoprefixerConfig = autoprefixer({
   remove: false
 });
 
-function getResolve() {
-  const resolve = {
-    modules: [process.cwd(), 'src', 'node_modules'],
-    extensions: ['.js', '.jsx']
-  };
-
-  return resolve;
-}
-
 const babelConfig = getBabelCommonConfig();
 
 module.exports = {
-  getResolve,
+  resolve,
   getResolveLoader() {
     return {
       modules: [
