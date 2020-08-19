@@ -1,3 +1,4 @@
 export default [
-  'en-US'
+  'en-US',
+  'zh-CN'
 ];

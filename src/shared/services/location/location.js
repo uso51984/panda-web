@@ -1,6 +1,7 @@
 import qs from 'qs';
 import template from 'lodash/template';
 import { routerRedux } from 'dva';
+import Globalize from 'shared/services/i18n/Globalize';
 
 const { push, replace, go, goBack, goForward } = routerRedux;
 
@@ -15,8 +16,10 @@ class Location {
     this.store = store;
   }
 
-  buildURL = (url, vars, params) => {
+  buildURL = (url, options = {}) => {
+    const { vars, params = {} } = options;
     let serializedUrl = template(url, { interpolate: /{{([\s\S]+?)}}/g })(vars);
+    params.locale = Globalize.locale;
 
     const queryStr = qs.stringify(params, { indices: false });
 
@@ -28,7 +31,7 @@ class Location {
   }
 
   goForward(){
-    this.store.dispatch(goForward())
+    this.store.dispatch(goForward());
   }
 
   goBack(stepNumber){
@@ -41,14 +44,14 @@ class Location {
 
   replace(url, options = {}) {
     const { vars, params } = options;
-    const serializedUrl = this.buildURL(url, vars, params);
+    const serializedUrl = this.buildURL(url, { vars, params });
 
     this.store.dispatch(replace(serializedUrl));
   }
 
   push(url, options = {}) {
     const { vars, params } = options;
-    const serializedUrl = this.buildURL(url, vars, params);
+    const serializedUrl = this.buildURL(url, { vars, params });
 
     this.store.dispatch(push(serializedUrl));
 

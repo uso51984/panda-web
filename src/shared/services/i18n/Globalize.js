@@ -21,7 +21,11 @@ class Globalize {
     Object.defineProperties(this, {
       locale: {
         get() {
-          return 'zh-CN';
+          return this.currentLocale || 'zh-CN';
+        },
+        set(v) {
+          this.currentLocale = v;
+          this.onIntlChange();
         }
       }
     });
@@ -69,7 +73,7 @@ class Globalize {
   }
 
   onIntlChange() {
-    const locale = (this.currentIntl && this.currentIntl.locale) || 'en';
+    const locale = this.currentLocale;
     moment.locale(locale);
   }
 

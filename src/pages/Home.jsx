@@ -4,7 +4,7 @@ import { testGetRequest } from 'services/sign';
 
 
 const Home = () => {
-  const data = testGetRequest({name: 'afsadf', age: '大是大非'})
+  const data = testGetRequest({ name: 'afsadf', age: '大是大非' });
 
   // testPut({id: 23}, {name: 'afsadf', age: '大是大非'});
   // testPost().catch(()=>{
@@ -15,7 +15,7 @@ const Home = () => {
     <div>
       asdfsafd
     </div>
-  )
-}
+  );
+};
 
 export default injectIntl(Home);

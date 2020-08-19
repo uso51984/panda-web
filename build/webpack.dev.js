@@ -24,7 +24,8 @@ module.exports = () => {
     output: {
       publicPath: '/',
       path: resolveCwd('dist'),
-      filename: '[name].[chunkhash:8].js'
+      filename: '[name].[chunkhash:8].js',
+      chunkFilename: '[name].[contenthash:8].async.js'
     },
     module: {
       rules: getWebpackCommonConfig.getLoaders().concat(getWebpackCommonConfig.getCssLoaders(false)),

@@ -23,7 +23,14 @@ module.exports = {
     "import/no-extraneous-dependencies": 0,
     "react/no-array-index-key": 0,
     "func-names": 0,
-    "arrow-body-style": [2, "as-needed"]
+    "arrow-body-style": [2, "as-needed"],
+    "no-restricted-globals": 0,
+    "no-unused-expressions": 0,
+    "semi": 2,
+    "key-spacing": 2,
+    "object-curly-spacing": 2,
+    '@typescript-eslint/lines-between-class-members': 0,
+    "@typescript-eslint/no-unused-expressions": 0
   },
   settings: {
     'import/resolver': {

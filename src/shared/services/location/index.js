@@ -1,7 +1,7 @@
 import * as urls from './consts/urls';
 import location from './location';
 
-export default {
+export {
   urls,
-  locationHelp: location
+  location
 }
