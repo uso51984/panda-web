@@ -6,4 +6,3 @@ const ErrorType = {
 };
 
 export default ErrorType;
-

@@ -1,4 +1,3 @@
-
 export default class RequestReponse {
   static isHttpError(status) {
     return status < 200 || status >= 300 || !status;

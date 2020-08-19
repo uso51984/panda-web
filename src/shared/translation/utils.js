@@ -1,9 +1,7 @@
 import template from 'lodash/template';
 import isPlainObject from 'lodash/isPlainObject';
 
-export const formatI18n = (message = '', values) => {
-  return values && isPlainObject(values) ? template(message, { interpolate: /{([\s\S]+?)}/g })(values) : message;
-}
+export const formatI18n = (message = '', values) => (values && isPlainObject(values) ? template(message, { interpolate: /{([\s\S]+?)}/g })(values) : message);
 
 export const formattedNumberFunc = (options) => {
   const { value, numberStyle, callback } = options;

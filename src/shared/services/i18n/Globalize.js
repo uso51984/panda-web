@@ -116,7 +116,7 @@ class Globalize {
     return d1.isSame(d2, 'day');
   }
 
-  translate(messageKey){
+  translate(messageKey) {
     const currentLocaleMessages = intlHelper.getMessages()[this.currentLocale];
     return currentLocaleMessages[messageKey];
   }

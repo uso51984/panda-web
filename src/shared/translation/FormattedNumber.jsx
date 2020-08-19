@@ -1,9 +1,9 @@
 import React from 'react';
 import { formattedNumberFunc } from './utils';
 
-const FormattedNumber= ({ value, numberStyle }) =>  (
+const FormattedNumber = ({ value, numberStyle }) => (
   <span className="format-number">
-    {formattedNumberFunc({value, numberStyle})}
+    {formattedNumberFunc({ value, numberStyle })}
   </span>
 );
 

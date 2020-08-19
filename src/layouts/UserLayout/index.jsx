@@ -1,16 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Select } from 'antd';
 import { urls } from 'shared/services/location';
 import SignIn from 'pages/User/SignIn';
-// import ForgotPassword from 'pages/User/ForgotPassword';
-import { FormattedDyncMessage } from 'shared/translation';
 import loadable from '@loadable/component';
 import LanguageSelect from 'shared/components/LanguageSelect';
 import { Redirect } from 'shared/components/RouterLink';
 import './index.less';
-
-const { Option } = Select;
 
 const ForgotPassword = loadable(() =>
   import(/* webpackChunkName: 'forgotPassword' */ 'pages/User/ForgotPassword'), {
@@ -19,7 +14,6 @@ const ForgotPassword = loadable(() =>
 
 class BasicLayout extends React.Component {
   handleChange = (value) => {
-    locale.updateLocale(value);
     console.log('languege change');
   }
 

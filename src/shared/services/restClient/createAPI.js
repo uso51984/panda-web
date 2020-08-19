@@ -4,7 +4,7 @@ import isArray from 'lodash/isArray';
 import request from './request';
 
 const exp = /\{\{([\s\S]+?)\}\}/g;
-const hasTemplate = s => s.match(exp);
+const hasTemplate = (s) => s.match(exp);
 const findTemplate = (s) => {
   const m = exp.exec(s);
   return m ? m[1] : '';

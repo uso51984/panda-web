@@ -29,5 +29,4 @@ const Router = (props) => {
   );
 };
 
-
 export default Router;

@@ -15,7 +15,7 @@ class Locale {
     const storageLocaleValue = localStorage.get('locale');
     const isStorageLocale = languages.indexOf(storageLocaleValue) !== -1;
 
-    if (isStorageLocale){
+    if (isStorageLocale) {
       this.updateLocale(storageLocaleValue);
       return;
     }

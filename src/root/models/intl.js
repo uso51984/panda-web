@@ -8,7 +8,7 @@ const intl = {
   state: getMessages(),
 
   effects: {
-    *login({ payload }, { call, put }) {
+    * login({ payload }, { call, put }) {
       const response = yield call(testGetRequest, payload);
       yield put({
         type: 'changeLoginStatus',

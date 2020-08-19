@@ -12,7 +12,6 @@ import toString from 'lodash/toString';
     &#096; -> '`'
 */
 
-
 export default (str = '') => {
   if (!str) {
     return '';

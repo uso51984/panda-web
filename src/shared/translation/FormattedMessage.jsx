@@ -12,10 +12,10 @@ const FormattedMessage = (props) => {
     });
   }
   return (
-    <ReactIntl.FormattedMessage values={formattedValues} {...rest}>
+    <ReactIntl.FormattedMessage {...rest} values={formattedValues}>
       {children}
     </ReactIntl.FormattedMessage>
   );
-}
+};
 
 export default FormattedMessage;

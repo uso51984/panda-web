@@ -29,6 +29,7 @@ module.exports = {
     "semi": 2,
     "key-spacing": 2,
     "object-curly-spacing": 2,
+    "arrow-spacing": 2,
     '@typescript-eslint/lines-between-class-members': 0,
     "@typescript-eslint/no-unused-expressions": 0
   },

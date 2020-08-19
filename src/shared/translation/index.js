@@ -11,4 +11,4 @@ export {
   FormattedNumber,
   formattedNumberFunc,
   formatI18n
-}
+};

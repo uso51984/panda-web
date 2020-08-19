@@ -13,11 +13,11 @@ const ForgotPassword = () => {
 
   const layout = { labelCol: { span: 8, }, wrapperCol: { span: 16, }, };
   const tailLayout = { wrapperCol: { offset: 8, span: 16, }, };
-  const onFinish = values => {
+  const onFinish = (values) => {
     console.log('Success:', values);
   };
 
-  const onFinishFailed = errorInfo => {
+  const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
 
@@ -36,23 +36,22 @@ const ForgotPassword = () => {
         <Form.Item
           label="Username"
           name="username"
-          rules={[ { required: true, message: 'Please input your username!', }, ]}
+          rules={[{ required: true, message: 'Please input your username!', }, ]}
         >
           <Input />
         </Form.Item>
 
         <Form.Item {...tailLayout}>
           <Button type="primary" htmlType="submit">
-          Submit
+            Submit
           </Button>
         </Form.Item>
 
         <Link to="/user/signIn">直接登录</Link>
       </Form>
     </div>
-  )
-}
-
+  );
+};
 
 export default connect(({ login }) => ({
   userLogin: login,

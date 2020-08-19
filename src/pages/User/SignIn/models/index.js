@@ -2,7 +2,7 @@ import { testGetRequest } from 'services/sign';
 import { fromJS } from 'immutable';
 
 const Model = {
-  namespace: 'login',
+  namespace: 'sign',
   state: fromJS({
     status: {
       test: 'chenjianbin'
@@ -10,7 +10,8 @@ const Model = {
   }),
 
   effects: {
-    *login({ payload }, { call, put }) {
+    * login({ payload }, { call, put }) {
+      console.log('this.props.', payload);
       const response = yield call(testGetRequest, payload);
       yield put({
         type: 'changeLoginStatus',

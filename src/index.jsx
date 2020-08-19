@@ -16,18 +16,17 @@ if (__STATIC__) {
 const history = createBrowserHistory();
 
 locale.initialize();
-console.log('------localeinit')
+
 Globalize.locale = locale.currentLocale;
 
 const app = dva({
   history
 });
 
-forEach(modles, (model)=> app.model(model));
+forEach(modles, (model) => app.model(model));
 app.router(AppRootRouter);
 app.use(createLoading());
 app.start('#root');
 
 // eslint-disable-next-line no-underscore-dangle
 location.initialize(app._store);
-

@@ -1,4 +1,3 @@
-
 class Loading {
   constructor() {
     const noop = () => { };
@@ -26,7 +25,7 @@ class Loading {
       this.showLoading();
     }
 
-    this.counter = this.counter + 1;
+    this.counter += 1;
   }
 
   hide() {
@@ -35,7 +34,7 @@ class Loading {
     }
 
     if (this.counter > 0) {
-      this.counter = this.counter - 1;
+      this.counter -= 1;
 
       if (this.counter === 0) {
         this.hideLoading();

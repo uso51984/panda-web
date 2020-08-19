@@ -16,5 +16,3 @@ const getMessages = () => ({
 export default {
   getMessages,
 };
-
-

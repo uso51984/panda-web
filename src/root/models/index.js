@@ -4,4 +4,4 @@ import intlModel from './intl';
 export default {
   intlModel,
   signIn
-}
+};
