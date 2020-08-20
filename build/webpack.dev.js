@@ -1,10 +1,29 @@
-
+const internalIp = require('internal-ip');
 const plugins = require('./sections/plugins');
 const getWebpackCommonConfig = require('./sections/webpackCommonConfig');
 const entry = require('./sections/entry');
 const output = require('./sections/output');
 
-console.log('getWebpackCommonConfig.resolve', getWebpackCommonConfig.resolve)
+let host = 'localhost';
+let port = 8070;
+
+// const getHost = ()=>{
+//   if (process.env.NODE_ENV === "static:ip") {
+//     return {
+//       host: internalIp.v4.sync(),
+//       port: 8080
+//     }
+//   }
+
+//   return {
+//     host = 'localhost';
+//     port = 8070;
+//   }
+// }
+if (process.env.NODE_ENV === "static:ip") {
+  host = internalIp.v4.sync()
+  port = 8080
+}
 
 module.exports = () => {
   return {
@@ -32,11 +51,11 @@ module.exports = () => {
       }
     },
     devServer: {
-      host: 'localhost',
+      host,
       compress: false,
       historyApiFallback: true,
-      open: true,
-      port: 8070
+      open: false,
+      port
     }
   };
 };

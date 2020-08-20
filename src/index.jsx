@@ -23,7 +23,7 @@ const app = dva({
   history
 });
 
-forEach(modles, (model) => app.model(model));
+forEach(modles, model => app.model(model));
 app.router(AppRootRouter);
 app.use(createLoading());
 app.start('#root');

@@ -6,7 +6,6 @@ const output = require('./sections/output');
 
 module.exports = () => {
   return {
-    devtool: '#source-map',
     resolveLoader: getWebpackCommonConfig.getResolveLoader(),
     entry,
     output: output,

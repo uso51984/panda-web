@@ -1,10 +1,11 @@
 
-module.exports = (modules) => {
+module.exports = () => {
   const plugins = [
     require.resolve('@babel/plugin-proposal-class-properties'),
     require.resolve('@babel/plugin-proposal-export-default-from'),
     require.resolve('@babel/plugin-proposal-export-namespace-from'),
     require.resolve('@babel/plugin-syntax-dynamic-import'),
+    require.resolve('@babel/plugin-transform-typeof-symbol'),
     [
       require.resolve('@babel/plugin-transform-runtime'),
       {
@@ -23,8 +24,8 @@ module.exports = (modules) => {
       [
         '@babel/preset-env',
         {
-          modules,
-          exclude: ['transform-typeof-symbol'],
+          useBuiltIns: 'entry',
+          "corejs": 2,
         },
       ],
       require.resolve('@babel/preset-react'),

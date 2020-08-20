@@ -1,8 +1,10 @@
 import { testGetRequest } from 'services/sign';
 import { fromJS } from 'immutable';
+import { NAMESPACE, SIGN_IN_EFFECT, SET_ERROR_UI } from '../consts/actionTypes';
+import { setErrorUiAction } from '../actions';
 
 const Model = {
-  namespace: 'sign',
+  namespace: NAMESPACE,
   state: fromJS({
     status: {
       test: 'chenjianbin'
@@ -10,8 +12,7 @@ const Model = {
   }),
 
   effects: {
-    * login({ payload }, { call, put }) {
-      console.log('this.props.', payload);
+    * [SIGN_IN_EFFECT]({ payload }, { call, put }) {
       const response = yield call(testGetRequest, payload);
       yield put({
         type: 'changeLoginStatus',
@@ -21,7 +22,11 @@ const Model = {
   },
 
   reducers: {
-    changeLoginStatus(state, { payload }) {
+    [SET_ERROR_UI](state, { payload }){
+
+      return state;
+    },
+    [SIGN_IN_EFFECT](state, { payload }) {
       return {
         ...state,
         status: payload.status,
