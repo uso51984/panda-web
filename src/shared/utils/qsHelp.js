@@ -11,4 +11,4 @@ export const getQueryString = () => {
 
 export const getQueryObject = () => queryString.parse(getQueryString());
 
-export const toQueryString = object => `?${queryString.stringify(object, { encode: false })}`;
+export const toQueryString = object => `?${queryString.stringify(object, { encode: true })}`;

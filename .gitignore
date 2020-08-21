@@ -33,4 +33,5 @@ screenshot
 .firebase
 .eslintcache
 
-# build
+# test
+test/coverage

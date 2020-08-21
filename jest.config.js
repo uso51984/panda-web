@@ -1,4 +1,6 @@
 module.exports = {
+  // "browser": true,
+  "testEnvironment": "jsdom",
   "cacheDirectory": "./node_modules/.cache",
   "verbose": true,
   "globals": {
@@ -10,6 +12,11 @@ module.exports = {
   },
   clearMocks: true,
   collectCoverage: true,
+  "collectCoverageFrom": [
+    "<rootDir>/src/**/*.{js,jsx}",
+    "!**/__mocks__/**"
+  ],
+  "testRegex": "(\\.(test|spec))\\.(jsx|js)$",
   "coverageDirectory": "test/coverage",
   "coverageThreshold": {
     "global": {
@@ -24,7 +31,13 @@ module.exports = {
     "/etc/",
     "/node_modules/",
   ],
-
+  "moduleDirectories": [
+    "src",
+    "i18n",
+    "test/json",
+    "test/specs",
+    "node_modules"
+  ],
   "roots": [
     "<rootDir>/test/",
     "<rootDir>/src/"

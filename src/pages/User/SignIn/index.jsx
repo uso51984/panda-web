@@ -5,8 +5,6 @@ import { connect } from 'dva';
 import { Link } from 'shared/components/RouterLink';
 import AsyncButton from 'shared/components/AsyncButton';
 import { location } from 'shared/services/location';
-import fee from 'assets/fee.jpg';
-import cn from 'assets/cn.png';
 import { signInEffectAction, setErrorUiAction } from './actions';
 import selfMessages from './translations';
 import './index.less';
@@ -35,7 +33,6 @@ const SignIn = ({ userLogin, intl, dispatch }) => {
       >
         测试Action
       </AsyncButton>
-      <img src={cn} alt="" />
       <FormattedMessage {...selfMessages.name} />
       <Button onClick={() => location.push('/user/signIn', { params: { name: 'asdf', age: 2323 } })}>测试</Button>
       <Form

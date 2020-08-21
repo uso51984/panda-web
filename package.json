@@ -13,7 +13,8 @@
     "stylelint": "stylelint 'src/**/*.less'",
     "stylelint:fix": "stylelint --fix \"src/**/*.less\" --syntax less",
     "build:i18n": "babel-node build/i18n/index.js",
-    "test:watch": "jest --watch"
+    "test:watch": "jest --watch",
+    "test": "jest --config='./jest.config.js'"
   },
   "author": "chenjianbin",
   "license": "ISC",
