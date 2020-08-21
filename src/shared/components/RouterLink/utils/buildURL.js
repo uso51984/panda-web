@@ -1,7 +1,7 @@
 import isObject from 'lodash/isObject';
 import { location } from 'shared/services/location';
 
-export default (to) => {
+export default to => {
   let path;
 
   if (isObject(to)) {

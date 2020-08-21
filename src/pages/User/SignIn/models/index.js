@@ -13,11 +13,16 @@ const Model = {
 
   effects: {
     * [SIGN_IN_EFFECT]({ payload }, { call, put }) {
-      const response = yield call(testGetRequest, payload);
-      yield put({
-        type: 'changeLoginStatus',
-        payload: response,
-      });
+      try {
+        const response = yield call(testGetRequest, payload);
+        yield put({
+          type: 'changeLoginStatus',
+          payload: response,
+        });
+      } catch (e) {
+        console.log('response', e);
+      }
+
     },
   },
 

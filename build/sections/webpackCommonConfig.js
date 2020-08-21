@@ -31,13 +31,13 @@ module.exports = {
         loader: 'babel-loader',
         options: babelConfig
       },
-      {
-        test: /\.svg$/,
-        loader: 'svg-sprite',
-      },
+      // {
+      //   test: /\.svg$/,
+      //   loader: 'svg-sprite',
+      // },
       {
         test: /\.woff2?(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url',
+        loader: 'url-loader',
         options: {
           limit: 10000,
           minetype: 'application/font-woff',
@@ -45,7 +45,7 @@ module.exports = {
       },
       {
         test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'url',
+        loader: 'url-loader',
         options: {
           limit: 10000,
           minetype: 'application/octet-stream',
@@ -53,16 +53,21 @@ module.exports = {
       },
       {
         test: /\.eot(\?v=\d+\.\d+\.\d+)?$/,
-        loader: 'file',
+        loader: 'file-loader',
       },
       {
-        test: /\.(png|jpg|jpeg|webp)$/i,
-        loader: 'file',
-      },
-      {
-        test: /\.md/,
-        use: ['raw-loader'],
-      },
+        test: /\.(png|jpg|jpeg|webp|svg)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              outputPath: 'images',
+              name: '[name].[ext]?[contenthash:8]',
+            },
+          }
+        ]
+      }
     ];
   },
 

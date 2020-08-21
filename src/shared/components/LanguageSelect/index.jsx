@@ -10,7 +10,7 @@ export default () => (
   <Select
     className="languages"
     defaultValue={Globalize.locale}
-    onChange={(value) => locale.updateLocale(value)}
+    onChange={value => locale.updateLocale(value)}
   >
     <Option value="zh-CN">中文</Option>
     <Option value="en-US">English</Option>

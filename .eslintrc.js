@@ -30,7 +30,7 @@ module.exports = {
     "key-spacing": 2,
     "object-curly-spacing": 2,
     "arrow-spacing": 2,
-    "jsx-tag-spacing": 2,
+    "react/jsx-tag-spacing": 2,
     "arrow-parens": ["error", "as-needed"],
     '@typescript-eslint/lines-between-class-members': 0,
     "@typescript-eslint/no-unused-expressions": 0

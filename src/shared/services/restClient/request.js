@@ -36,7 +36,7 @@ export default function request(path, method, data, config = {}) {
   }
 
   return axios(axiosConfig)
-    .then((response) => {
+    .then(response => {
       const resData = RequestReponse.parseResponseData(response.data);
       if (RequestReponse.isSuccess(resData.code)) {
         RequestReponse.success();
@@ -45,7 +45,7 @@ export default function request(path, method, data, config = {}) {
 
       return Promise.reject(response);
     })
-    .catch((result) => {
+    .catch(result => {
       if (axios.isCancel(result)) {
         const error = { result, title: 'Cancel Request', code: 'canceled' };
         return Promise.reject(error);

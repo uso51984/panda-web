@@ -2,7 +2,7 @@ import moment from 'moment';
 import isNumber from 'lodash/isNumber';
 import intlHelper from 'shared/utils/intlHelper';
 
-const createMoment = (value) => {
+const createMoment = value => {
   if (value) {
     const val = moment(value);
 

@@ -4,8 +4,8 @@ import isArray from 'lodash/isArray';
 import request from './request';
 
 const exp = /\{\{([\s\S]+?)\}\}/g;
-const hasTemplate = (s) => s.match(exp);
-const findTemplate = (s) => {
+const hasTemplate = s => s.match(exp);
+const findTemplate = s => {
   const m = exp.exec(s);
   return m ? m[1] : '';
 };
@@ -27,7 +27,7 @@ const doTemplate = (url, param) => {
   return result;
 };
 
-const createAPI = (method, url, fetchConfig) => (params, content) => {
+const createAPI = (method, url, defaultConfig) => (params, content, config) => {
   let data = content;
   let restUrl = url;
   if (hasTemplate(url)) {
@@ -35,6 +35,8 @@ const createAPI = (method, url, fetchConfig) => (params, content) => {
   } else {
     data = params;
   }
+
+  const fetchConfig = { ...defaultConfig,  ...config };
 
   return request(restUrl, method, data, fetchConfig);
 };

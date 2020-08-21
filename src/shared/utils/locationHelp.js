@@ -1,6 +1,6 @@
 // fix ie not popup
 let message;
-const beforeunloadEvent = (e) => {
+const beforeunloadEvent = e => {
   (e || window.event).returnValue = message;
   return message;
 };

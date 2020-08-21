@@ -5,24 +5,11 @@ const entry = require('./sections/entry');
 const output = require('./sections/output');
 
 let host = 'localhost';
-let port = 8070;
+let port = 7001;
 
-// const getHost = ()=>{
-//   if (process.env.NODE_ENV === "static:ip") {
-//     return {
-//       host: internalIp.v4.sync(),
-//       port: 8080
-//     }
-//   }
-
-//   return {
-//     host = 'localhost';
-//     port = 8070;
-//   }
-// }
 if (process.env.NODE_ENV === "static:ip") {
   host = internalIp.v4.sync()
-  port = 8080
+  port = 7002
 }
 
 module.exports = () => {
@@ -54,7 +41,7 @@ module.exports = () => {
       host,
       compress: false,
       historyApiFallback: true,
-      open: false,
+      open: true,
       port
     }
   };

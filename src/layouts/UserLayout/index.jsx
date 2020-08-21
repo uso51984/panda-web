@@ -13,7 +13,7 @@ const ForgotPassword = loadable(() =>
 });
 
 class BasicLayout extends React.Component {
-  handleChange = (value) => {
+  handleChange = value => {
     console.log('languege change');
   }
 

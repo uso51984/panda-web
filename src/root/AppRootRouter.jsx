@@ -2,7 +2,7 @@ import React from 'react';
 import { routerRedux } from 'dva';
 import { Route, Switch } from 'react-router-dom';
 import { IntlProvider } from 'react-intl';
-import { ConfigProvider } from 'antd';
+import { ConfigProvider, Modal } from 'antd';
 import SecurityLayout from 'layouts/SecurityLayout';
 import UserLayout from 'layouts/UserLayout';
 import intlHelper from 'shared/utils/intlHelper';
@@ -12,7 +12,11 @@ const { getMessages } = intlHelper;
 
 const { ConnectedRouter } = routerRedux;
 
-const Router = (props) => {
+Modal.config({
+  rootPrefixCls: 'crm',
+});
+
+const Router = props => {
   const { history } = props;
   return (
     <IntlProvider locale={Globalize.locale} messages={getMessages()[Globalize.locale]}>

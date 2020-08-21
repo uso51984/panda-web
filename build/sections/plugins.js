@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ProgressBarPlugin = require('progress-bar-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const env = process.env.NODE_ENV || 'development';
 const definitions = {
@@ -31,7 +32,9 @@ const miniCssExtractPlugin = new MiniCssExtractPlugin({
   chunkFilename: '[id].[hash:8].css',
 })
 
-const plugins = [brogressBarPlugin, htmlWebpackPlugin, definePlugin, replacementPlugin];
+const cleanWebpackPlugin = new CleanWebpackPlugin();
+
+const plugins = [cleanWebpackPlugin, brogressBarPlugin, htmlWebpackPlugin, definePlugin, replacementPlugin];
 
 if (env === 'production') {
   plugins.push(uglifyJsPlugin)

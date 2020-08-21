@@ -3,7 +3,7 @@ import isPlainObject from 'lodash/isPlainObject';
 
 export const formatI18n = (message = '', values) => (values && isPlainObject(values) ? template(message, { interpolate: /{([\s\S]+?)}/g })(values) : message);
 
-export const formattedNumberFunc = (options) => {
+export const formattedNumberFunc = options => {
   const { value, numberStyle, callback } = options;
 
   const formattedNumber = new Intl.NumberFormat('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
