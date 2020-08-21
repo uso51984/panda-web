@@ -3,6 +3,13 @@ const Adapter = require('enzyme-adapter-react-16');
 
 enzyme.configure({ adapter: new Adapter() });
 
+const MatchMedia = () => ({
+  matches: false,
+  addListener: () => { },
+  removeListener: () => { },
+});
+
+window.matchMedia = window.matchMedia || MatchMedia;
 
 Object.defineProperty(window, 'location', {
   configurable: true,

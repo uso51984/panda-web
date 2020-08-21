@@ -1,5 +1,4 @@
 module.exports = {
-  // "browser": true,
   "testEnvironment": "jsdom",
   "cacheDirectory": "./node_modules/.cache",
   "verbose": true,
@@ -38,11 +37,11 @@ module.exports = {
     "test/specs",
     "node_modules"
   ],
+  "setupFiles": [
+    "<rootDir>/test/setup.jest.js"
+  ],
   "roots": [
     "<rootDir>/test/",
     "<rootDir>/src/"
   ],
-  "setupFiles": [
-    "<rootDir>/test/setup.jest.js"
-  ]
 };

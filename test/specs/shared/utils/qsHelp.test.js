@@ -26,12 +26,12 @@ describe('qsHelp', () => {
     expect(getQueryString()).toEqual('');
   });
 
-  test('getQueryObject', () => {
+  test('getQueryObject should work fine', () => {
     expect(getQueryString()).toEqual('locale=en-US&name=bin%3C%3E%E7%9A%84&age=3');
     expect(getQueryObject()).toEqual({ "age": "3", "locale": "en-US", "name": "bin<>的" });
   });
 
-  test('toQueryString', () => {
+  test('toQueryString should work fine', () => {
     expect(toQueryString({ name: 'bin<>的', age: 23, id: 2, })).toEqual('?name=bin%3C%3E%E7%9A%84&age=23&id=2');
   });
 });
