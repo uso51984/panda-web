@@ -5,6 +5,6 @@ const PREFIX = 'app.sign.signin';
 export default defineMessages({
   name: {
     id: `${PREFIX}.name`,
-    defaultMessage: '李小龙'
+    defaultMessage: '李小龙1'
   },
 });

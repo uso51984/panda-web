@@ -2,7 +2,7 @@ import fs from 'fs';
 import glob from 'glob';
 import flatten from 'lodash/flatten';
 import { transform } from '@babel/core';
-import locales from '../../src/i18n/locales';
+import locales from '../../src/locales/locales';
 
 const TARGET_DIRETORY = 'src/**/*.js';
 
@@ -19,7 +19,8 @@ const extract = path => new Promise((resolve, reject) => {
     return readFile(path).then(code => resolve(transform(code, {
       plugins: [
         'react-intl',
-        '@babel/plugin-transform-runtime'
+        '@babel/plugin-transform-runtime',
+        '@babel/plugin-proposal-class-properties'
       ],
       presets: ['@babel/preset-env', '@babel/preset-react']
     }).metadata['react-intl'].messages), error => reject(error));
@@ -44,9 +45,9 @@ const getContent = msgObject => `/* eslint-disable */\nexport default ${toJSON(m
 
 const generateI18nFiles = msgObject =>
 locales.forEach((locale) => {
-  const filePath = `i18n/source/${locale}.js`;
+  const filePath = `src/locales/source/${locale}.js`;
   // add fake i18n file for fr-CA.
-  if (locale !== 'en-US') {
+  if (locale !== 'zh-CN') {
     if (!fs.existsSync(filePath)) {
       Object.keys(msgObject).forEach((key) => {
         msgObject[key] = `${locale}:${msgObject[key]}`;

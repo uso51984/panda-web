@@ -1,4 +1,4 @@
 /* eslint-disable */
 export default {
-  "app.sign.signin.name": "李小龙",
+  "app.sign.signin.name": "李小龙1"
 }
