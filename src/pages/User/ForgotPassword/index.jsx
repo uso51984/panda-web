@@ -2,8 +2,8 @@ import React from 'react';
 import { injectIntl, FormattedMessage } from 'react-intl';
 import { Form, Input, Button, Checkbox } from 'antd';
 import { connect, useStore } from 'dva';
-import { Link } from 'shared/components/RouterLink';
-import { testGetRequest } from 'services/sign';
+import { Link } from '@/shared/components/RouterLink';
+import { testGetRequest } from '@/services/sign';
 
 const ForgotPassword = () => {
   // testPut({id: 23}, {name: 'afsadf', age: '大是大非'});

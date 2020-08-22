@@ -1,5 +1,5 @@
-import { testGetRequest } from 'services/sign';
-import intlHelper from 'shared/utils/intlHelper';
+import { testGetRequest } from '@/services/sign';
+import intlHelper from '@/shared/utils/intlHelper';
 
 const { getMessages } = intlHelper;
 

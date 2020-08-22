@@ -1,4 +1,4 @@
-import { createAPI, httpMethod } from 'shared/utils/request';
+import { createAPI, httpMethod } from '@/shared/utils/request';
 
 export const testGet = createAPI(httpMethod.GET, 'https://www.fastmock.site/mock/a4676b8718662138dc75efb3b3a401e6/restclinet/rest/user');
 export const getUserName = createAPI(httpMethod.GET, 'https://www.fastmock.site/mock/a4676b8718662138dc75efb3b3a401e6/restclinet/api/username');

@@ -1,6 +1,6 @@
 import moment from 'moment';
 import isNumber from 'lodash/isNumber';
-import intlHelper from 'shared/utils/intlHelper';
+import intlHelper from '@/shared/utils/intlHelper';
 
 const createMoment = value => {
   if (value) {

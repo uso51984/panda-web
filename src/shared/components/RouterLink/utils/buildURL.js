@@ -1,5 +1,5 @@
 import isObject from 'lodash/isObject';
-import { location } from 'shared/services/location';
+import { location } from '@/shared/services/location';
 
 export default to => {
   let path;

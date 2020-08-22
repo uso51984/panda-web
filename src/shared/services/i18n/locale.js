@@ -1,6 +1,6 @@
-import { getQueryObject, toQueryString } from 'shared/utils/qsHelp';
-import locationHelp from 'shared/utils/locationHelp';
-import localStorage from 'shared/utils/localStorage';
+import { getQueryObject, toQueryString } from '@/shared/utils/qsHelp';
+import locationHelp from '@/shared/utils/locationHelp';
+import localStorage from '@/shared/utils/localStorage';
 import languages from './consts/languages';
 
 class Locale {

@@ -35,16 +35,16 @@ module.exports = {
     '@typescript-eslint/lines-between-class-members': 0,
     "@typescript-eslint/no-unused-expressions": 0
   },
-  settings: {
-    'import/resolver': {
-      webpack: {
-        config: {
-          resolve: {
-            extensions: ['', '.js', '.jsx'],
-            modules: ['src', 'node_modules']
-          }
-        }
-      }
-    },
-  },
+  // settings: {
+  //   'import/resolver': {
+  //     webpack: {
+  //       config: {
+  //         resolve: {
+  //           extensions: ['', '.js', '.jsx'],
+  //           modules: ['src', 'node_modules']
+  //         }
+  //       }
+  //     }
+  //   },
+  // },
 };

@@ -1,5 +1,5 @@
 import React from 'react';
-import decodeHtmlStr from 'shared/utils/decodeHtmlStr';
+import decodeHtmlStr from '@/shared/utils/decodeHtmlStr';
 
 /**
  * TODO: prevent XSS.

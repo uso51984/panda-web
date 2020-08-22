@@ -1,11 +1,12 @@
 const path = require('path');
 const resolveCwd = require('./resolveCwd');
 
-console.log('path.resolve(__dirname, "src")',resolveCwd("src"));
-
 const resolve = {
-  modules: [process.cwd(), resolveCwd("src"), 'node_modules'],
-  extensions: ['.js', '.jsx']
+  modules: ['node_modules'],
+  extensions: ['.js', '.jsx'],
+  alias: {
+    '@': resolveCwd('src'),
+  }
 };
 
 module.exports = resolve;

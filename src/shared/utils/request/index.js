@@ -1,5 +1,5 @@
 import { Modal } from 'antd';
-import { createAPI, RequestReponse, httpMethod } from 'shared/services/restClient';
+import { createAPI, RequestReponse, httpMethod } from '@/shared/services/restClient';
 
 const { error } = Modal;
 

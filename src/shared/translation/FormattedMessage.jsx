@@ -1,6 +1,6 @@
 import React from 'react';
 import * as ReactIntl from 'react-intl';
-import decodeHtmlStr from 'shared/utils/decodeHtmlStr';
+import decodeHtmlStr from '@/shared/utils/decodeHtmlStr';
 
 const FormattedMessage = props => {
   const { children, values, ...rest } = props;

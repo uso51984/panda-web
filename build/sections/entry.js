@@ -4,7 +4,8 @@ const entry = {
   index: [
     "core-js/stable",
     "regenerator-runtime/runtime",
-    resolveCwd('src/index.jsx')
+    './src/index.jsx'
+    // resolveCwd('src/index.jsx')
   ],
 }
 

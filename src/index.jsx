@@ -2,11 +2,11 @@ import { createBrowserHistory } from 'history';
 import dva from 'dva';
 import createLoading from 'dva-loading';
 import forEach from 'lodash/forEach';
-import AppRootRouter from 'root/AppRootRouter';
-import modles from 'root/models';
-import { location } from 'shared/services/location';
-import locale from 'shared/services/i18n/locale';
-import Globalize from 'shared/services/i18n/Globalize';
+import AppRootRouter from '@/root/AppRootRouter';
+import modles from '@/root/models';
+import { location } from '@/shared/services/location';
+import locale from '@/shared/services/i18n/locale';
+import Globalize from '@/shared/services/i18n/Globalize';
 
 /* eslint-disable global-require */
 // if (__STATIC__) {

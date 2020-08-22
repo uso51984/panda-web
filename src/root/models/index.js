@@ -1,4 +1,4 @@
-import signIn from 'pages/User/SignIn/models';
+import signIn from '@/pages/User/SignIn/models';
 import intlModel from './intl';
 
 export default {

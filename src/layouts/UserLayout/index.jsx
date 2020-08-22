@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { urls } from 'shared/services/location';
-import SignIn from 'pages/User/SignIn';
 import loadable from '@loadable/component';
-import LanguageSelect from 'shared/components/LanguageSelect';
-import { Redirect } from 'shared/components/RouterLink';
+import { urls } from '@/shared/services/location';
+import SignIn from '@/pages/User/SignIn';
+import LanguageSelect from '@/shared/components/LanguageSelect';
+import { Redirect } from '@/shared/components/RouterLink';
 import './index.less';
 
 const ForgotPassword = loadable(() =>
-  import(/* webpackChunkName: 'forgotPassword' */ 'pages/User/ForgotPassword'), {
+  import(/* webpackChunkName: 'forgotPassword' */ '@/pages/User/ForgotPassword'), {
   fallback: 'loading'
 });
 

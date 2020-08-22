@@ -1,7 +1,7 @@
 import qs from 'qs';
 import template from 'lodash/template';
 import { routerRedux } from 'dva';
-import Globalize from 'shared/services/i18n/Globalize';
+import Globalize from '@/shared/services/i18n/Globalize';
 
 const { push, replace, go, goBack, goForward } = routerRedux;
 

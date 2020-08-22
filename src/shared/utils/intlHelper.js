@@ -1,5 +1,5 @@
-import enLocal from 'i18n/source/en-US.js';//eslint-disable-line
-import zhLocal from 'i18n/source/zh-CN.js';//eslint-disable-line
+import enLocal from '@/locales/source/en-US.js';//eslint-disable-line
+import zhLocal from '@/locales/source/zh-CN.js';//eslint-disable-line
 
 /**
  * get all supported Languag messages

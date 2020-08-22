@@ -41,7 +41,7 @@ module.exports = () => {
       host,
       compress: false,
       historyApiFallback: true,
-      open: true,
+      open: false,
       port
     }
   };
