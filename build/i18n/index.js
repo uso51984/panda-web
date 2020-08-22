@@ -2,7 +2,7 @@ import fs from 'fs';
 import glob from 'glob';
 import flatten from 'lodash/flatten';
 import { transform } from '@babel/core';
-import locales from '../../i18n/locales';
+import locales from '../../src/i18n/locales';
 
 const TARGET_DIRETORY = 'src/**/*.js';
 
