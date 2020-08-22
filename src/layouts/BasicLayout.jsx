@@ -1,11 +1,11 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Breadcrumb } from 'antd';
 import { Link } from '@/shared/components/RouterLink';
-import Menus from '@/shared/components/Menu';
+import Menu from '@/shared/components/Menu';
+import menuDatas from '@/shared/consts/MenuDatas';
 
 const { Header, Footer, Sider, Content } = Layout;
-const { SubMenu } = Menu;
 
 class BasicLayout extends React.PureComponent {
   render() {
@@ -14,15 +14,10 @@ class BasicLayout extends React.PureComponent {
         <Layout>
           <Header className="header">
             <div className="logo" />
-            <Menu theme="dark" mode="horizontal" defaultSelectedKeys={['2']}>
-              <Menu.Item key="1">nav 1</Menu.Item>
-              <Menu.Item key="2">nav 2</Menu.Item>
-              <Menu.Item key="3">nav 3</Menu.Item>
-            </Menu>
           </Header>
           <Layout>
             <Sider width={200} className="site-layout-background">
-              <Menus />
+              <Menu menuDatas={menuDatas} />
             </Sider>
             <Layout style={{ padding: '0 24px 24px' }}>
               <Breadcrumb style={{ margin: '16px 0' }}>

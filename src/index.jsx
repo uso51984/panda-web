@@ -1,5 +1,4 @@
-import { createBrowserHistory } from 'history';
-import dva from 'dva';
+import dva, { createBrowserHistory } from 'dva';
 import createLoading from 'dva-loading';
 import forEach from 'lodash/forEach';
 import AppRootRouter from '@/root/AppRootRouter';
@@ -9,9 +8,9 @@ import locale from '@/shared/services/i18n/locale';
 import Globalize from '@/shared/services/i18n/Globalize';
 
 /* eslint-disable global-require */
-// if (__STATIC__) {
-//   require('../mock');
-// }
+if (__STATIC__) {
+  require('../mock');
+}
 
 const history = createBrowserHistory();
 
@@ -20,7 +19,7 @@ locale.initialize();
 Globalize.locale = locale.currentLocale;
 
 const app = dva({
-  history
+  history,
 });
 
 forEach(modles, model => app.model(model));

@@ -22,8 +22,8 @@ const Router = props => {
       <ConfigProvider prefixCls="crm">
         <ConnectedRouter history={history}>
           <Switch>
-            <Route path="/" component={SecurityLayout} />
             <Route path="/user" component={UserLayout} />
+            <Route path="/" component={SecurityLayout} />
             <Route component={() => '这个页面走丢了'} />
           </Switch>
         </ConnectedRouter>
