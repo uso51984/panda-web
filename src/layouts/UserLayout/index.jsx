@@ -18,7 +18,7 @@ const ForgotPassword = loadable(() =>
   fallback: <Spin />,
 });
 
-class BasicLayout extends React.Component {
+class UserLayout extends React.Component {
   handleChange = value => {
     console.log('languege change');
   }
@@ -46,4 +46,4 @@ class BasicLayout extends React.Component {
   }
 }
 
-export default BasicLayout;
+export default UserLayout;

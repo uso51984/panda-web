@@ -4,8 +4,25 @@ import { Layout, Breadcrumb } from 'antd';
 import { Link } from '@/shared/components/RouterLink';
 import Menu from '@/shared/components/Menu';
 import menuDatas from '@/shared/consts/MenuDatas';
+import { getBasicLayoutRoutes } from '@/routers';
+import { urls } from '@/shared/services/location';
+
+const { userCenter, accountManagement } = urls;
 
 const { Header, Footer, Sider, Content } = Layout;
+
+const userCenterMenus=  [
+  {
+    path: accountManagement.ACCOUNT_MANAGEMENT,
+    name: '客户',
+    icon: 'dashboard',
+  },
+  {
+    path: userCenter.USER_CENTER_WITHDRAW,
+    name: '个人中心',
+    icon: 'dashboard',
+  }
+];
 
 class BasicLayout extends React.PureComponent {
   render() {
@@ -14,22 +31,15 @@ class BasicLayout extends React.PureComponent {
         <Layout>
           <Header className="header">
             <div className="logo" />
+            <Menu menuDatas={userCenterMenus} mode="horizontal" />
           </Header>
           <Layout>
-            <Sider width={200} className="site-layout-background">
+            {/* <Sider width={200} className="site-layout-background">
               <Menu menuDatas={menuDatas} />
-            </Sider>
-            <Layout style={{ padding: '0 24px 24px' }}>
-              <Breadcrumb style={{ margin: '16px 0' }}>
-                <Breadcrumb.Item>Home</Breadcrumb.Item>
-                <Breadcrumb.Item>List</Breadcrumb.Item>
-                <Breadcrumb.Item>App</Breadcrumb.Item>
-              </Breadcrumb>
+            </Sider> */}
+            <Layout>
               <div>
-                <Switch>
-                  <Route exact path="/settings/user/roleSetting" component={() => '角色权限管理内容'} />
-                  <Route exact path="/settings/linkSetting" component={() => '推广链接设置内容'} />
-                </Switch>
+                {getBasicLayoutRoutes()}
               </div>
             </Layout>
           </Layout>

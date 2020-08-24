@@ -1,7 +1,8 @@
 import {
   getQueryString,
   getQueryObject,
-  toQueryString
+  toQueryString,
+  toPath
 } from 'shared/utils/qsHelp';
 
 
@@ -15,8 +16,8 @@ describe('qsHelp', () => {
       value: {
         href: 'www.test.cn',
         search: '?locale=en-US&name=bin%3C%3E%E7%9A%84&age=3',
-        pathname: '/home'
-      }
+        pathname: '/home',
+      },
     });
   });
 
@@ -28,10 +29,14 @@ describe('qsHelp', () => {
 
   test('getQueryObject should work fine', () => {
     expect(getQueryString()).toEqual('locale=en-US&name=bin%3C%3E%E7%9A%84&age=3');
-    expect(getQueryObject()).toEqual({ "age": "3", "locale": "en-US", "name": "bin<>的" });
+    expect(getQueryObject()).toEqual({ age: '3', locale: 'en-US', name: 'bin<>的' });
   });
 
   test('toQueryString should work fine', () => {
-    expect(toQueryString({ name: 'bin<>的', age: 23, id: 2, })).toEqual('?name=bin%3C%3E%E7%9A%84&age=23&id=2');
+    expect(toQueryString({ name: 'bin<>的', age: 23, id: 2 })).toEqual('?name=bin%3C%3E%E7%9A%84&age=23&id=2');
+  });
+
+  test('toPath should work fine', () => {
+    expect(toPath('/userCenter/:name/age/:age',{ name: 'bin<>的', age: 23 })).toEqual('/userCenter/bin%3C%3E%E7%9A%84/age/23');
   });
 });

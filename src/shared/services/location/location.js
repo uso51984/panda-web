@@ -1,6 +1,6 @@
 import qs from 'qs';
-import template from 'lodash/template';
 import { routerRedux } from 'dva';
+import { toPath } from '@/shared/utils/qsHelp';
 import Globalize from '@/shared/services/i18n/Globalize';
 
 const { push, replace, go, goBack, goForward } = routerRedux;
@@ -18,7 +18,7 @@ class Location {
 
   buildURL = (url, options = {}) => {
     const { vars, params = {} } = options;
-    let serializedUrl = template(url, { interpolate: /{{([\s\S]+?)}}/g })(vars);
+    let serializedUrl = toPath(url, vars);
     params.locale = Globalize.locale;
 
     const queryStr = qs.stringify(params, { indices: false });

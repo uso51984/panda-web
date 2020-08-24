@@ -1,6 +1,6 @@
 import React from 'react';
 import { injectIntl } from 'react-intl';
-import { testGetRequest } from 'services/sign';
+import { testGetRequest } from '@/shared/services/sign';
 
 const Home = () => {
   const data = testGetRequest({ name: 'afsadf', age: '大是大非' });

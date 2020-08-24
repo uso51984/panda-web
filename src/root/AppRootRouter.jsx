@@ -17,6 +17,7 @@ message.config({ prefixCls: 'crm' });
 
 const Router = props => {
   const { history } = props;
+
   return (
     <IntlProvider locale={Globalize.locale} messages={getMessages()[Globalize.locale]}>
       <ConfigProvider prefixCls="crm">

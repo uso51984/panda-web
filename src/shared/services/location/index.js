@@ -3,5 +3,5 @@ import location from './location';
 
 export {
   urls,
-  location
+  location,
 };
