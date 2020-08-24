@@ -31,11 +31,11 @@ const SignIn = ({ userLogin, intl, dispatch }) => {
   return (
     <div className="signin-container">
       <div className="title">登录页面</div>
-      <AsyncButton
-        onClick={click}
-      >
-        测试Action
-      </AsyncButton>
+        <AsyncButton
+          onClick={click}
+        >
+          测试Action
+        </AsyncButton>
       <FormattedMessage {...selfMessages.name} />
       <Button onClick={() => location.push('/user/signIn', { params: { name: 'asdf', age: 2323 } })}>测试</Button>
       <Form

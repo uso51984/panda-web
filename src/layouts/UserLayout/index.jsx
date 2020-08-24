@@ -6,8 +6,7 @@ import { urls } from '@/shared/services/location';
 import SignIn from '@/pages/User/SignIn';
 import LanguageSelect from '@/shared/components/LanguageSelect';
 import { Redirect } from '@/shared/components/RouterLink';
-import { promiseTimeout } from '@/shared/utils/promiseTimeout';
-import minDelay from '@/shared/utils/minDelay';
+import ErrorBoundary from '@/shared/components/ErrorBoundary';
 import './index.less';
 
 const ForgotPassword = loadable(() =>
@@ -34,12 +33,13 @@ class BasicLayout extends React.Component {
               <LanguageSelect />
             </div>
           </div>
-
-          <Switch>
-            <Route exact path={urls.SIGNIN} component={SignIn} />
-            <Route exact path={urls.FORGOT_PASSWORD} component={ForgotPassword} />
-            <Redirect from={urls.USER} to={urls.SIGNIN} />
-          </Switch>
+          <ErrorBoundary>
+            <Switch>
+              <Route exact path={urls.SIGNIN} component={SignIn} />
+              <Route exact path={urls.FORGOT_PASSWORD} component={ForgotPassword} />
+              <Redirect from={urls.USER} to={urls.SIGNIN} />
+            </Switch>
+          </ErrorBoundary>
         </div>
       </div>
     );
