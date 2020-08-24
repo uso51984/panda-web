@@ -41,10 +41,11 @@ module.exports = {
     'comma-dangle': ['error', 'always-multiline'],
     'quotes': ['error', 'single', { avoidEscape: true }],
     'space-before-function-paren': ['error', 'never'],
-    "space-in-parens": ["error", "never"],
+    'space-in-parens': ['error', 'never'],
     'func-call-spacing': ['error', 'never'],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'no-return-assign': 0,
   },
   // settings: {
   //   'import/resolver': {

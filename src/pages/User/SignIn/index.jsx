@@ -22,8 +22,11 @@ const SignIn = ({ userLogin, intl, dispatch }) => {
     console.log('Failed:', errorInfo);
   };
 
-  const click = () => dispatch(signInEffectAction({ test: 2323 }))
-    .then(data => console.log(data));
+  const click = () => {
+    dispatch(setErrorUiAction());
+    return dispatch(signInEffectAction({ test: 2323 }))
+      .then(data => console.log(data));
+  };
 
   return (
     <div className="signin-container">

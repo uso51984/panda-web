@@ -1,4 +1,4 @@
-import { testGetRequest } from '@/services/sign';
+import { testGet, getUserName } from '@/services/api';
 import { fromJS } from 'immutable';
 import { NAMESPACE, SIGN_IN_EFFECT, SET_ERROR_UI } from '../consts/actionTypes';
 import { setErrorUiAction } from '../actions';
@@ -14,7 +14,9 @@ const Model = {
   effects: {
     * [SIGN_IN_EFFECT]({ payload }, { call, put }) {
       try {
-        const response = yield call(testGetRequest, payload);
+        const response = yield call(testGet, payload);
+        console.log('response', response);
+
         yield put({
           type: 'changeLoginStatus',
           payload: response,
@@ -22,7 +24,20 @@ const Model = {
       } catch (e) {
         console.log('response', e);
       }
+    },
 
+    * [SET_ERROR_UI]({ payload }, { call, put }) {
+      try {
+        const response = yield call(getUserName, payload);
+        console.log('response', response);
+
+        yield put({
+          type: 'changeLoginStatus',
+          payload: response,
+        });
+      } catch (e) {
+        console.log('response', e);
+      }
     },
   },
 

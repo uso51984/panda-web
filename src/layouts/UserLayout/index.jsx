@@ -1,15 +1,22 @@
 import React from 'react';
+import { Spin } from 'antd';
 import { Route, Switch } from 'react-router-dom';
 import loadable from '@loadable/component';
 import { urls } from '@/shared/services/location';
 import SignIn from '@/pages/User/SignIn';
 import LanguageSelect from '@/shared/components/LanguageSelect';
 import { Redirect } from '@/shared/components/RouterLink';
+import { promiseTimeout } from '@/shared/utils/promiseTimeout';
+import minDelay from '@/shared/utils/minDelay';
 import './index.less';
 
 const ForgotPassword = loadable(() =>
-  import(/* webpackChunkName: 'forgotPassword' */ '@/pages/User/ForgotPassword'), {
-  fallback: 'loading'
+  import(
+    /* webpackChunkName: 'forgotPassword' */
+    /* webpackPrefetch: true */
+    '@/pages/User/ForgotPassword'
+  ), {
+  fallback: <Spin />,
 });
 
 class BasicLayout extends React.Component {
