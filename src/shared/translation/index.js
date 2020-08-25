@@ -10,5 +10,5 @@ export {
   FormattedMessage,
   FormattedNumber,
   formattedNumberFunc,
-  formatI18n
+  formatI18n,
 };

@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`translation FormattedDyncMessage should work fine  1`] = `
+<div>
+  test
+</div>
+`;
+
+exports[`translation FormattedDyncMessage should work fine  2`] = `
+<div>
+  
+</div>
+`;
+
+exports[`translation FormattedHtmlMessage should work fine  1`] = `
+<span
+  dangerouslySetInnerHTML={
+    Object {
+      "__html": "FormattedHtmlMessage",
+    }
+  }
+/>
+`;
+
+exports[`translation FormattedNumber should work fine  1`] = `
+<span
+  className="format-number"
+>
+  $233.00
+</span>
+`;

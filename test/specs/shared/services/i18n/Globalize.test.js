@@ -64,7 +64,6 @@ describe('Globalize', () => {
 
   it('Globalize getTime should work fine', () => {
     const dateMoment = moment(1598343036538);
-    expect(Globalize.getTime()).toEqual(new Date().getTime());
 
     expect(Globalize.getTime(dateMoment)).toEqual(1598343036538);
   });
