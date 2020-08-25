@@ -3,10 +3,9 @@ import { location } from '@/shared/services/location';
 
 export default to => {
   let path;
-
   if (isObject(to)) {
-    const { url, vars, params } = to;
-    path = location.buildURL(url, { vars, params });
+    const { url, params, search } = to;
+    path = location.buildURL(url, { params, search });
   } else {
     path = location.buildURL(to);
   }

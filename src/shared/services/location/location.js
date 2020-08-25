@@ -17,11 +17,11 @@ class Location {
   }
 
   buildURL = (url, options = {}) => {
-    const { vars, params = {} } = options;
-    let serializedUrl = toPath(url, vars);
-    params.locale = Globalize.locale;
+    const { params = {}, search = {} } = options;
+    let serializedUrl = toPath(url, params);
+    search.locale = Globalize.locale;
 
-    const queryStr = qs.stringify(params, { indices: false });
+    const queryStr = qs.stringify(search, { indices: false });
 
     if (queryStr) {
       serializedUrl = `${serializedUrl}?${queryStr}`;
@@ -43,15 +43,15 @@ class Location {
   }
 
   replace(url, options = {}) {
-    const { vars, params } = options;
-    const serializedUrl = this.buildURL(url, { vars, params });
+    const { params, search } = options;
+    const serializedUrl = this.buildURL(url, { params, search });
 
     this.store.dispatch(replace(serializedUrl));
   }
 
   push(url, options = {}) {
-    const { vars, params } = options;
-    const serializedUrl = this.buildURL(url, { vars, params });
+    const { params, search } = options;
+    const serializedUrl = this.buildURL(url, { params, search });
 
     this.store.dispatch(push(serializedUrl));
 

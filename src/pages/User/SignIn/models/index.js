@@ -1,7 +1,6 @@
-import { testGet, getUserName } from '@/services/api';
+import { testGet, getUserName } from '@/api';
 import { fromJS } from 'immutable';
 import { NAMESPACE, SIGN_IN_EFFECT, SET_ERROR_UI } from '../consts/actionTypes';
-import { setErrorUiAction } from '../actions';
 
 const Model = {
   namespace: NAMESPACE,

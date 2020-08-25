@@ -1,15 +1,10 @@
 import React from 'react';
-import { injectIntl, FormattedMessage } from 'react-intl';
-import { Form, Input, Button, Checkbox } from 'antd';
-import { connect, useStore } from 'dva';
+import { injectIntl } from 'react-intl';
+import { Form, Input, Button } from 'antd';
+import { connect } from 'dva';
 import { Link } from '@/shared/components/RouterLink';
-import { testGetRequest } from '@/services/sign';
 
 const ForgotPassword = () => {
-  // testPut({id: 23}, {name: 'afsadf', age: '大是大非'});
-  // testPost().catch(()=>{
-  //   console.log('23333333')
-  // });
 
   const layout = { labelCol: { span: 8, }, wrapperCol: { span: 16, }, };
   const tailLayout = { wrapperCol: { offset: 8, span: 16, }, };
