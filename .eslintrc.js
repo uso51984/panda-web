@@ -17,6 +17,7 @@ module.exports = {
     __SERVERRENDER__: true,
     __STATIC__: true,
     __DEV__: true,
+    mockStore: true,
     jest: true,
   },
   rules: {

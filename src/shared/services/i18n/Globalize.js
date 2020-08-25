@@ -123,14 +123,9 @@ class Globalize {
     return m ? parseInt(m.format('x'), 10) : '';
   }
 
-  isSameDay(start, end) {
-    const d1 = this.parseDate(start);
-    const d2 = this.parseDate(end);
-    return d1.isSame(d2, 'day');
-  }
-
   translate(messageKey) {
     const currentLocaleMessages = intlHelper.getMessages()[this.currentLocale];
+
     return currentLocaleMessages[messageKey];
   }
 }
