@@ -1,5 +1,5 @@
 import * as urls from './consts/urls';
-import location from './location';
+import location from './locationServices';
 
 export {
   urls,

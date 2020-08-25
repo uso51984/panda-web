@@ -23,9 +23,7 @@ class Location {
 
     const queryStr = qs.stringify(search, { indices: false });
 
-    if (queryStr) {
-      serializedUrl = `${serializedUrl}?${queryStr}`;
-    }
+    queryStr && (serializedUrl = `${serializedUrl}?${queryStr}`);
 
     return serializedUrl;
   }
@@ -47,6 +45,8 @@ class Location {
     const serializedUrl = this.buildURL(url, { params, search });
 
     this.store.dispatch(replace(serializedUrl));
+
+    return serializedUrl;
   }
 
   push(url, options = {}) {

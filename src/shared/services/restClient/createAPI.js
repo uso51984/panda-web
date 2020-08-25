@@ -10,12 +10,12 @@ const findTemplate = s => {
   return m ? m[1] : '';
 };
 
-const doTemplate = (url, param) => {
+const doTemplate = (url, params) => {
   let result = url;
-  if (isString(url) && isObject(param)) {
+  if (isString(url) && isObject(params)) {
     let key = findTemplate(url);
     while (key) {
-      let value = param[key] || '';
+      let value = params[key] || '';
       if (isArray(value)) {
         value = value.join(',');
       }

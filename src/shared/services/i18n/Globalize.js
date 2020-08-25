@@ -27,8 +27,8 @@ class Globalize {
         set(v) {
           this.currentLocale = v;
           this.onIntlChange();
-        }
-      }
+        },
+      },
     });
 
     Object.defineProperties(this, {
@@ -38,8 +38,8 @@ class Globalize {
         },
         set(v) {
           this.currentDateFormat = v;
-        }
-      }
+        },
+      },
     });
 
     Object.defineProperties(this, {
@@ -49,16 +49,16 @@ class Globalize {
         },
         set(v) {
           this.currentTimeFormat = v;
-        }
-      }
+        },
+      },
     });
 
     Object.defineProperties(this, {
       dateTimeFormat: {
         get() {
           return `${this.currentDateFormat} ${this.currentTimeFormat}`;
-        }
-      }
+        },
+      },
     });
 
     Object.defineProperties(this, {
@@ -68,8 +68,8 @@ class Globalize {
         },
         set(v) {
           this.currentTimeZoneOffset = v;
-        }
-      }
+        },
+      },
     });
   }
 
@@ -108,6 +108,19 @@ class Globalize {
   formatDateTime(dateTime, format) {
     const m = createMoment(dateTime);
     return m ? m.format(format || this.dateTimeFormat) : '';
+  }
+
+  getTime = date => {
+    if (!date) {
+      return new Date().getTime();
+    }
+
+    if (date instanceof Date){
+      return date.getTime();
+    }
+
+    const m = createMoment(date);
+    return m ? parseInt(m.format('x'), 10) : '';
   }
 
   isSameDay(start, end) {

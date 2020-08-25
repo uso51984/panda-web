@@ -1,4 +1,4 @@
-import locationHelp from 'shared/utils/locationHelp';
+import locationHelp from '@/shared/utils/locationHelp';
 
 const map = {};
 window.addEventListener = jest.fn((event, cb) => {

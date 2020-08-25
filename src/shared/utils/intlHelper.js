@@ -10,7 +10,7 @@ const getMessages = () => ({
   },
   'zh-CN': {
     ...zhLocal,
-  }
+  },
 });
 
 export default {

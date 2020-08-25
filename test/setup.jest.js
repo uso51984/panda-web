@@ -1,7 +1,10 @@
-const enzyme = require('enzyme');
-const Adapter = require('enzyme-adapter-react-16');
+import enzyme from 'enzyme';
+import Adapter from 'enzyme-adapter-react-16';
+import configureStore from 'redux-mock-store';
 
 enzyme.configure({ adapter: new Adapter() });
+const middlewares = [];
+global.mockStore = configureStore(middlewares);
 
 const MatchMedia = () => ({
   matches: false,
@@ -18,6 +21,6 @@ Object.defineProperty(window, 'location', {
   value: {
     href: 'www.test.cn',
     search: '?locale=en-US&name=23&age=3',
-    pathname: '/home'
-  }
+    pathname: '/home',
+  },
 });

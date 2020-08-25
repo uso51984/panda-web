@@ -1,4 +1,4 @@
-import decodeHtmlStr from 'shared/utils/decodeHtmlStr';
+import decodeHtmlStr from '@/shared/utils/decodeHtmlStr';
 
 describe('utils/decodeHtmlStr', () => {
   it('decodeHtmlStr works fine', () => {

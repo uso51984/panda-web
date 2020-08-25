@@ -26,6 +26,7 @@ module.exports = () => {
         {
           useBuiltIns: 'entry',
           "corejs": 3,
+          "loose": true
         },
       ],
       require.resolve('@babel/preset-react'),

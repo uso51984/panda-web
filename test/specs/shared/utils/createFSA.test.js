@@ -1,4 +1,4 @@
-import createFSA from 'shared/utils/createFSA';
+import createFSA from '@/shared/utils/createFSA';
 
 describe('utils/createFSA', () => {
   it('createFSA should work fine', () => {

@@ -1,4 +1,4 @@
-import locationStorage from 'shared/utils/localStorage';
+import locationStorage from '@/shared/utils/localStorage';
 
 
 describe('locationStorage', () => {
