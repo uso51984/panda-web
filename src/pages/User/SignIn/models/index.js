@@ -7,7 +7,7 @@ const Model = {
   state: fromJS({
     status: {
       test: 'chenjianbin'
-    },
+    }
   }),
 
   effects: {
@@ -18,7 +18,7 @@ const Model = {
 
         yield put({
           type: 'changeLoginStatus',
-          payload: response,
+          payload: response
         });
       } catch (e) {
         console.log('response', e);
@@ -32,12 +32,12 @@ const Model = {
 
         yield put({
           type: 'changeLoginStatus',
-          payload: response,
+          payload: response
         });
       } catch (e) {
         console.log('response', e);
       }
-    },
+    }
   },
 
   reducers: {
@@ -49,10 +49,10 @@ const Model = {
       return {
         ...state,
         status: payload.status,
-        type: payload.type,
+        type: payload.type
       };
-    },
-  },
+    }
+  }
 };
 
 export default Model;

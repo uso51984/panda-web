@@ -8,14 +8,14 @@ RequestReponse.httpError = Error => {
   if (data.code === 404){
     error({
       title,
-      content: '请求了不存在的接口',
+      content: '请求了不存在的接口'
     });
   }
 
   if (data.code === 500){
     error({
       title,
-      content: '服务器端出错了',
+      content: '服务器端出错了'
     });
   }
 

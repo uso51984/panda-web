@@ -15,6 +15,11 @@ module.exports = {
     '<rootDir>/src/**/*.{js,jsx}',
     '!**/__mocks__/**',
   ],
+  coverageReporters: [
+    'json-summary',
+    'html',
+    'lcov',
+  ],
   testRegex: '(\\.(test|spec))\\.(jsx|js)$',
   coverageDirectory: 'test/coverage',
   coverageThreshold: {

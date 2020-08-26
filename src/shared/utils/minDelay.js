@@ -3,7 +3,7 @@ import delay from 'delay';
 const minDelay = async(promise, minimumDelay, options) => {
   options = {
     delayRejection: true,
-    ...options,
+    ...options
   };
 
   let promiseError;

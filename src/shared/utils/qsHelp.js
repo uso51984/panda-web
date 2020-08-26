@@ -19,4 +19,4 @@ export const urlToList = url => {
   return urllist.map((urlItem, index) => `/${urllist.slice(0, index + 1).join('/')}`);
 };
 
-export const toPath = (url, vars) => compile(url, { encode: encodeURIComponent })(vars);
+export const toPath = (url, params) => compile(url, { encode: encodeURIComponent })(params);

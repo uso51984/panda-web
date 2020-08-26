@@ -19,7 +19,7 @@ locale.initialize();
 Globalize.locale = locale.currentLocale;
 
 const app = dva({
-  history,
+  history
 });
 
 forEach(modles, model => app.model(model));

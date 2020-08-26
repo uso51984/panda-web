@@ -12,8 +12,8 @@ import './index.less';
 
 const SignIn = ({ userLogin, intl, dispatch }) => {
 
-  const layout = { labelCol: { span: 8, }, wrapperCol: { span: 16, }, };
-  const tailLayout = { wrapperCol: { offset: 8, span: 16, }, };
+  const layout = { labelCol: { span: 8 }, wrapperCol: { span: 16 } };
+  const tailLayout = { wrapperCol: { offset: 8, span: 16 } };
   const onFinish = values => {
     console.log('Success:', values);
   };
@@ -31,18 +31,18 @@ const SignIn = ({ userLogin, intl, dispatch }) => {
   return (
     <div className="signin-container">
       <div className="title">登录页面</div>
-        <AsyncButton
-          onClick={click}
-        >
+      <AsyncButton
+        onClick={click}
+      >
           测试Action
-        </AsyncButton>
+      </AsyncButton>
       <FormattedMessage {...selfMessages.name} />
       <Button onClick={() => location.push('/user/signIn', { params: { name: 'asdf', age: 2323 } })}>测试</Button>
       <Form
         {...layout}
         name="basic"
         initialValues={{
-          remember: true,
+          remember: true
         }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -75,5 +75,5 @@ const SignIn = ({ userLogin, intl, dispatch }) => {
 };
 
 export default connect(({ login }) => ({
-  userLogin: login,
+  userLogin: login
 }))(injectIntl(SignIn));

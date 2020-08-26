@@ -1,8 +1,5 @@
-import enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
 import configureStore from 'redux-mock-store';
 
-enzyme.configure({ adapter: new Adapter() });
 const middlewares = [];
 global.mockStore = configureStore(middlewares);
 
@@ -11,6 +8,7 @@ const MatchMedia = () => ({
   addListener: () => { },
   removeListener: () => { },
 });
+
 
 window.matchMedia = window.matchMedia || MatchMedia;
 
@@ -24,3 +22,4 @@ Object.defineProperty(window, 'location', {
     pathname: '/home',
   },
 });
+

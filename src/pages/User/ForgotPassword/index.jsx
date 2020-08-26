@@ -6,8 +6,8 @@ import { Link } from '@/shared/components/RouterLink';
 
 const ForgotPassword = () => {
 
-  const layout = { labelCol: { span: 8, }, wrapperCol: { span: 16, }, };
-  const tailLayout = { wrapperCol: { offset: 8, span: 16, }, };
+  const layout = { labelCol: { span: 8 }, wrapperCol: { span: 16 } };
+  const tailLayout = { wrapperCol: { offset: 8, span: 16 } };
   const onFinish = values => {
     console.log('Success:', values);
   };
@@ -22,7 +22,7 @@ const ForgotPassword = () => {
         {...layout}
         name="basic"
         initialValues={{
-          remember: true,
+          remember: true
         }}
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
@@ -30,7 +30,7 @@ const ForgotPassword = () => {
         <Form.Item
           label="Username"
           name="username"
-          rules={[{ required: true, message: 'Please input your username!', }, ]}
+          rules={[{ required: true, message: 'Please input your username!' } ]}
         >
           <Input />
         </Form.Item>
@@ -48,5 +48,5 @@ const ForgotPassword = () => {
 };
 
 export default connect(({ login }) => ({
-  userLogin: login,
+  userLogin: login
 }))(injectIntl(ForgotPassword));

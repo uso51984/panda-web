@@ -15,7 +15,7 @@ const ForgotPassword = loadable(() =>
     /* webpackPrefetch: true */
     '@/pages/User/ForgotPassword'
   ), {
-  fallback: <Spin />,
+  fallback: <Spin />
 });
 
 class UserLayout extends React.Component {

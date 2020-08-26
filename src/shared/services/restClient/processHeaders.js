@@ -3,7 +3,7 @@ import httpMethod from './consts/httpMethod';
 
 export default function processHeaders(method, headers = {}) {
   const contentType = {
-    'Content-Type': ((method === httpMethod.POST || method === httpMethod.PUT) ? ContentType.JSON : ContentType.URL_ENCODED),
+    'Content-Type': ((method === httpMethod.POST || method === httpMethod.PUT) ? ContentType.JSON : ContentType.URL_ENCODED)
   };
 
   const requestedWidth = {

@@ -7,5 +7,5 @@ export {
   Link,
   NavLink,
   Redirect,
-  buildURL,
+  buildURL
 };

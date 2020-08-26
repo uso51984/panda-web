@@ -18,7 +18,7 @@ export default () => {
         to={{
           url: accountManagement.ACCOUNTS_DETAIL,
           params: { id: 2323 } ,
-          search: { name: 'chenjianb', age: 2323 },
+          search: { name: 'chenjianb', age: 2323 }
         } }
       >
       accountsDetail

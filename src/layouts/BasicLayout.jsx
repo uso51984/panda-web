@@ -12,13 +12,13 @@ const userCenterMenus=  [
   {
     path: accountManagement.ACCOUNTS,
     name: '客户',
-    icon: 'dashboard',
+    icon: 'dashboard'
   },
   {
     path: userCenter.USER_CENTER_WITHDRAW,
     name: '个人中心',
-    icon: 'dashboard',
-  },
+    icon: 'dashboard'
+  }
 ];
 
 class BasicLayout extends React.PureComponent {

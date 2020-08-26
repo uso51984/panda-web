@@ -1,4 +1,4 @@
-import pathToRegexp from 'path-to-regexp';
+import { pathToRegexp } from 'path-to-regexp';
 import { urlToList } from '@/shared/utils/qsHelp';
 
 /**
@@ -32,5 +32,5 @@ export const getDefaultCollapsedSubMenus = (pathname, flatMenuKeys) => urlToList
   .map(item => getMenuMatches(flatMenuKeys, item)[0])
   .filter(item => item);
 
-export const getSelectedMenuKeys = ( pathname, flatMenuKeys ) => urlToList(pathname)
+export const getSelectedMenuKeys = (pathname, flatMenuKeys) => urlToList(pathname)
   .map(itemPath => getMenuMatches(flatMenuKeys, itemPath).pop());

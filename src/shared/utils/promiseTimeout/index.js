@@ -3,5 +3,5 @@ import TimeoutError from './TimeoutError';
 
 export {
   promiseTimeout,
-  TimeoutError,
+  TimeoutError
 };

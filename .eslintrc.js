@@ -1,14 +1,14 @@
 module.exports = {
   extends: [
     require.resolve('code-rule/dist/eslint'),
-    'plugin:react-hooks/recommended',
+    'plugin:react-hooks/recommended'
   ],
   env: {
     browser: true,
     node: true,
     mocha: true,
     jest: true,
-    es6: true,
+    es6: true
   },
   globals: {
     location: true,
@@ -18,7 +18,7 @@ module.exports = {
     __STATIC__: true,
     __DEV__: true,
     mockStore: true,
-    jest: true,
+    jest: true
   },
   rules: {
     'indent': ['error', 2],
@@ -39,7 +39,7 @@ module.exports = {
     '@typescript-eslint/lines-between-class-members': 0,
     '@typescript-eslint/no-unused-expressions': 0,
     'quote-props': ['error', 'consistent-as-needed'],
-    'comma-dangle': ['error', 'always-multiline'],
+    'comma-dangle': ['error', 'never'],
     'quotes': ['error', 'single', { avoidEscape: true }],
     'space-before-function-paren': ['error', 'never'],
     'space-in-parens': ['error', 'never'],
@@ -47,7 +47,8 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'no-return-assign': 0,
-  },
+    'no-console': 0
+  }
   // settings: {
   //   'import/resolver': {
   //     webpack: {

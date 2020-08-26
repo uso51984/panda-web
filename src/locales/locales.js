@@ -1,3 +1,3 @@
 export default [
-  'zh-CN',
+  'zh-CN'
 ];

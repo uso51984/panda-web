@@ -20,7 +20,7 @@ jest.mock('react-router-dom', () => {
 
 describe('RouterLink', () => {
   it('buildURL', () => {
-    expect(buildURL('http://www.facebook.com')).toEqual('http://www.facebook.com?locale=zh-CN');
+    expect(buildURL('/user/23/name/25')).toEqual('/user/23/name/25?locale=zh-CN');
     expect(buildURL({
       url: '/user/:id/name/:age',
       params: {
@@ -35,21 +35,21 @@ describe('RouterLink', () => {
 
   it('Link renders correctly', () => {
     const tree = renderer
-      .create(<Link to="http://www.facebook.com" className="test">Facebook</Link>)
+      .create(<Link to="/user/23/name/25" className="test">Facebook</Link>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('NavLink renders correctly', () => {
     const tree = renderer
-      .create(<NavLink to="http://www.facebook.com" className="test">Facebook</NavLink>)
+      .create(<NavLink to="/user/23/name/25" className="test">Facebook</NavLink>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('Redirect renders correctly', () => {
     const tree = renderer
-      .create(<Redirect to="http://www.facebook.com" className="test">Facebook</Redirect>)
+      .create(<Redirect to="/user/23/name/25" className="test">Facebook</Redirect>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

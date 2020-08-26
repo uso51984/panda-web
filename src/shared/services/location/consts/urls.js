@@ -5,7 +5,7 @@ export const FORGOT_PASSWORD = `${USER}/forgotPassword`;
 
 export const accountManagement = {
   ACCOUNTS: '/accounts',
-  ACCOUNTS_DETAIL: '/accounts/details/:id',
+  ACCOUNTS_DETAIL: '/accounts/details/:id'
 };
 
 export const userCenter = {
@@ -13,6 +13,6 @@ export const userCenter = {
   USER_CENTER_WITHDRAW: '/userCenter/withdraw',
   USER_CENTER_EDIT_PASSWD: '/userCenter/editPasswd',
   USER_CENTER_BASICINFO: '/userCenter/basicinfo',
-  USER_CENTER_PERSONAL_NOTIFY: '/userCenter/personalNotify',
+  USER_CENTER_PERSONAL_NOTIFY: '/userCenter/personalNotify'
 };
 

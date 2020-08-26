@@ -10,7 +10,7 @@ const promiseTimeout =  function(promise, timeoutMillis) {
       timeout = setTimeout(function() {
         reject(error);
       }, timeoutMillis);
-    }),
+    })
   ]).then(function(v) {
     clearTimeout(timeout);
     return v;

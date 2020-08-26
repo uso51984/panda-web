@@ -3,7 +3,7 @@
 exports[`RouterLink Link renders correctly 1`] = `
 <a
   className="test"
-  href="http://www.facebook.com?locale=zh-CN"
+  href="/user/23/name/25?locale=zh-CN"
 >
   Facebook
 </a>
@@ -12,7 +12,7 @@ exports[`RouterLink Link renders correctly 1`] = `
 exports[`RouterLink NavLink renders correctly 1`] = `
 <a
   className="test"
-  href="http://www.facebook.com?locale=zh-CN"
+  href="/user/23/name/25?locale=zh-CN"
 >
   Facebook
 </a>
@@ -21,7 +21,7 @@ exports[`RouterLink NavLink renders correctly 1`] = `
 exports[`RouterLink Redirect renders correctly 1`] = `
 <a
   className="test"
-  href="http://www.facebook.com?locale=zh-CN"
+  href="/user/23/name/25?locale=zh-CN"
 >
   Facebook
 </a>

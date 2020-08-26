@@ -6,13 +6,13 @@ import zhLocal from '@/locales/source/zh-CN.js';//eslint-disable-line
  */
 const getMessages = () => ({
   'en-US': {
-    ...enLocal,
+    ...enLocal
   },
   'zh-CN': {
-    ...zhLocal,
-  },
+    ...zhLocal
+  }
 });
 
 export default {
-  getMessages,
+  getMessages
 };

@@ -26,7 +26,7 @@ export default function request(path, method, data, config = {}) {
     url: path,
     data: params,
     headers: processHeaders(method, headers),
-    ...config,
+    ...config
   };
 
   if (axiosConfig.headers['Content-Type'] !== ContentType.JSON) {
