@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   extends: [
     require.resolve('code-rule/dist/eslint'),
@@ -48,17 +50,12 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'warn',
     'no-return-assign': 0,
     'no-console': 0
+  },
+  settings: {
+    'import/resolver': {
+      webpack: {
+        config: './test/resolveConfig'
+      }
+    }
   }
-  // settings: {
-  //   'import/resolver': {
-  //     webpack: {
-  //       config: {
-  //         resolve: {
-  //           extensions: ['', '.js', '.jsx'],
-  //           modules: ['src', 'node_modules']
-  //         }
-  //       }
-  //     }
-  //   },
-  // },
 };

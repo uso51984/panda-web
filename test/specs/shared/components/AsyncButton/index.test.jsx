@@ -22,7 +22,7 @@ describe('AsyncButton', () => {
   it('AsyncButton should work fine', async() => {
     const props = {
       onClick: jest.fn(() => Promise.resolve()),
-      children: 'test',
+      children: 'test'
     };
 
     render(<AsyncButton {...props} />);

@@ -4,9 +4,9 @@ import Globalize from '@/shared/services/i18n/Globalize';
 jest.mock('@/shared/utils/intlHelper', () => ({
   getMessages: () => ({
     'en-US': {
-      name: 'test',
-    },
-  }),
+      name: 'test'
+    }
+  })
 }));
 
 describe('Globalize', () => {

@@ -6,7 +6,7 @@ global.mockStore = configureStore(middlewares);
 const MatchMedia = () => ({
   matches: false,
   addListener: () => { },
-  removeListener: () => { },
+  removeListener: () => { }
 });
 
 
@@ -19,7 +19,7 @@ Object.defineProperty(window, 'location', {
   value: {
     href: 'www.test.cn',
     search: '?locale=en-US&name=23&age=3',
-    pathname: '/home',
-  },
+    pathname: '/home'
+  }
 });
 

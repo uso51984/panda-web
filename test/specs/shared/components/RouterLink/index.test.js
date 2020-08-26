@@ -13,7 +13,7 @@ jest.mock('react-router-dom', () => {
   return ({
     Link: LinkNode,
     NavLink: LinkNode,
-    Redirect: LinkNode,
+    Redirect: LinkNode
   });
 });
 
@@ -25,11 +25,11 @@ describe('RouterLink', () => {
       url: '/user/:id/name/:age',
       params: {
         id: 23,
-        age: 25,
+        age: 25
       },
       search: {
-        name: 'chenjianbin',
-      },
+        name: 'chenjianbin'
+      }
     })).toEqual('/user/23/name/25?name=chenjianbin&locale=zh-CN');
   });
 

@@ -7,18 +7,18 @@ module.exports = {
     __DEV__: false,
     __TESTING__: true,
     __TESTINGHOST__: 'localhost',
-    __TESTINGPORT__: 3332,
+    __TESTINGPORT__: 3332
   },
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: [
     '<rootDir>/src/**/*.{js,jsx}',
-    '!**/__mocks__/**',
+    '!**/__mocks__/**'
   ],
   coverageReporters: [
     'json-summary',
     'html',
-    'lcov',
+    'lcov'
   ],
   testRegex: '(\\.(test|spec))\\.(jsx|js)$',
   coverageDirectory: 'test/coverage',
@@ -27,29 +27,29 @@ module.exports = {
       branches: 96,
       functions: 97,
       lines: 98,
-      statements: 98,
-    },
+      statements: 98
+    }
   },
   testPathIgnorePatterns: [
     '/build/',
     '/etc/',
-    '/node_modules/',
+    '/node_modules/'
   ],
   moduleDirectories: [
     'src',
     'i18n',
     'test/json',
     'test/specs',
-    'node_modules',
+    'node_modules'
   ],
   setupFiles: [
-    '<rootDir>/test/setup.jest.js',
+    '<rootDir>/test/setup.jest.js'
   ],
   roots: [
     '<rootDir>/test/',
-    '<rootDir>/src/',
+    '<rootDir>/src/'
   ],
   moduleNameMapper: {
-    '@/(.*)$': '<rootDir>/src/$1',
-  },
+    '@/(.*)$': '<rootDir>/src/$1'
+  }
 };

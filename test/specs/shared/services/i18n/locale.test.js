@@ -9,8 +9,8 @@ describe('locale', () => {
       value: {
         href: 'www.test.cn',
         search: '?locale=en-US&name=bin%3C%3E%E7%9A%84&age=3',
-        pathname: '/home',
-      },
+        pathname: '/home'
+      }
     });
   });
 

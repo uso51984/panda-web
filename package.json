@@ -9,7 +9,7 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./build/webpack.dev.js",
     "build": "cross-env NODE_ENV=production webpack --config ./build/webpack.pro.js",
     "eslint": "eslint --ext .js,.jsx ./src",
-    "eslint:fix": "eslint --fix --cache --ext .js,.jsx --format=pretty ./src",
+    "eslint:fix": "eslint --fix --cache --ext .js,.jsx --format=pretty ./test",
     "stylelint": "stylelint 'src/**/*.less'",
     "stylelint:fix": "stylelint --fix \"src/**/*.less\" --syntax less",
     "build:i18n": "babel-node build/i18n/index.js",

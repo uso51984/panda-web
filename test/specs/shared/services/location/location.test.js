@@ -2,7 +2,7 @@
 import location from '@/shared/services/location/locationServices';
 
 jest.mock('@/shared/utils/intlHelper', () => ({
-  getMessages: '',
+  getMessages: ''
 }));
 
 
@@ -26,7 +26,7 @@ describe('locationServices', () => {
   it('buildURL should work fine ', () => {
     expect(location.buildURL('/usr/:id/name/:age', {
       params: { id: 3, age: 23 },
-      search: { test: 'asdf', name: 'chen' },
+      search: { test: 'asdf', name: 'chen' }
     })).toEqual('/usr/3/name/23?test=asdf&name=chen&locale=zh-CN');
 
     expect(location.buildURL('/usr')).toEqual('/usr?locale=zh-CN');
