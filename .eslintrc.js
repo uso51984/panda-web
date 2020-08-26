@@ -1,5 +1,3 @@
-const path = require('path');
-
 module.exports = {
   extends: [
     require.resolve('code-rule/dist/eslint'),

@@ -5,7 +5,7 @@ Mock.setup({
   timeout: '300-600'
 });
 
-// 文章相关
-Mock.mock('/test2323', 'get', articleAPI.getList);
+Mock.mock(/\/testGetMock/, articleAPI.getList());
+
 
 export default Mock;
