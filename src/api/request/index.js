@@ -1,5 +1,7 @@
 import { Modal } from 'antd';
-import { createAPI, RequestReponse, httpMethod } from '@/shared/services/restClient';
+import * as restClient from '@/shared/services/restClient';
+
+const { RequestReponse, httpMethod } = restClient;
 
 const { error } = Modal;
 
@@ -35,4 +37,15 @@ RequestReponse.businessError = businessError => {
   console.log('businessError', businessError);
 };
 
-export { createAPI, httpMethod };
+const defaultConfig = {
+  headers: {
+    'x-test': 'sadf'
+  }
+};
+
+const createAPI = (method, url) => restClient.createAPI(method, url, defaultConfig);
+
+export {
+  createAPI,
+  httpMethod
+};

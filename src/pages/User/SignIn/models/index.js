@@ -1,4 +1,4 @@
-import { testGet, getUserName } from '@/api';
+import { testGet, testPost, getUserName } from '@/api';
 import { fromJS } from 'immutable';
 import { NAMESPACE, SIGN_IN_EFFECT, SET_ERROR_UI } from '../consts/actionTypes';
 
@@ -12,6 +12,9 @@ const Model = {
 
   effects: {
     * [SIGN_IN_EFFECT]({ payload }, { call, put }) {
+      const postResult = yield call(testPost, payload);
+      console.log('000', postResult);
+
       try {
         const response = yield call(testGet, payload);
         console.log('response', response);

@@ -47,7 +47,8 @@ module.exports = {
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
     'no-return-assign': 0,
-    'no-console': 0
+    'no-console': 0,
+    'jsx-quotes': ['error', 'prefer-double']
   },
   settings: {
     'import/resolver': {

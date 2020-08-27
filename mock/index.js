@@ -5,7 +5,8 @@ Mock.setup({
   timeout: '300-600'
 });
 
-Mock.mock(/\/testGetMock/, articleAPI.getList());
+Mock.mock(/\/testGetMock/, 'get', articleAPI.getList);
+Mock.mock(/\/testPostMock/, 'post', articleAPI.testPost);
 
 
 export default Mock;
