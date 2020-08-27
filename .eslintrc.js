@@ -41,7 +41,7 @@ module.exports = {
     'quote-props': ['error', 'consistent-as-needed'],
     'comma-dangle': ['error', 'never'],
     'quotes': ['error', 'single', { avoidEscape: true }],
-    'space-before-function-paren': ['error', 'never'],
+    'space-before-function-paren': ['error', { anonymous: 'always', named: 'never', asyncArrow: 'always' }],
     'space-in-parens': ['error', 'never'],
     'func-call-spacing': ['error', 'never'],
     'react-hooks/rules-of-hooks': 'error',

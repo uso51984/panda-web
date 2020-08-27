@@ -12,20 +12,27 @@ const Model = {
 
   effects: {
     * [SIGN_IN_EFFECT]({ payload }, { call, put }) {
-      const postResult = yield call(testPost, payload);
-      console.log('000', postResult);
 
-      try {
-        const response = yield call(testGet, payload);
-        console.log('response', response);
+      yield put({
+        type: 'changeLoginStatus',
+        payload: 'response'
+      });
 
-        yield put({
-          type: 'changeLoginStatus',
-          payload: response
-        });
-      } catch (e) {
-        console.log('response', e);
-      }
+
+      // const postResult = yield call(testPost, payload, { dd: 232323 });
+      // console.log('000', postResult);
+
+      // try {
+      //   const response = yield call(testGet, payload);
+      //   console.log('response', response);
+
+      //   yield put({
+      //     type: 'changeLoginStatus',
+      //     payload: response
+      //   });
+      // } catch (e) {
+      //   console.log('response', e);
+      // }
     },
 
     * [SET_ERROR_UI]({ payload }, { call, put }) {

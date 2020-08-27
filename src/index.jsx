@@ -8,9 +8,9 @@ import locale from '@/shared/services/i18n/locale';
 import Globalize from '@/shared/services/i18n/Globalize';
 
 /* eslint-disable global-require */
-if (__STATIC__) {
+// if (__STATIC__) {
   require('../mock');
-}
+// }
 
 const history = createBrowserHistory();
 
