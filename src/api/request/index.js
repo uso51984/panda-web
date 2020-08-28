@@ -37,7 +37,7 @@ RequestReponse.businessError = businessError => {
 
 const defaultConfig = {
   headers: {
-    'x-test': 'sadf'
+    lang: 'sadf'
   }
 };
 
