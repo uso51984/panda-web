@@ -20,36 +20,6 @@ module.exports = {
     mockStore: true,
     jest: true
   },
-  rules: {
-    'indent': ['error', 2],
-    'operator-assignment': 0,
-    'no-param-reassign': 0,
-    'import/no-extraneous-dependencies': 0,
-    'react/no-array-index-key': 0,
-    'func-names': 0,
-    'arrow-body-style': [2, 'as-needed'],
-    'no-restricted-globals': 0,
-    'no-unused-expressions': 0,
-    'semi': 2,
-    'key-spacing': 2,
-    'object-curly-spacing': 2,
-    'arrow-spacing': 2,
-    'react/jsx-tag-spacing': 2,
-    'arrow-parens': ['error', 'as-needed'],
-    '@typescript-eslint/lines-between-class-members': 0,
-    '@typescript-eslint/no-unused-expressions': 0,
-    'quote-props': ['error', 'consistent-as-needed'],
-    'comma-dangle': ['error', 'never'],
-    'quotes': ['error', 'single', { avoidEscape: true }],
-    'space-before-function-paren': ['error', { anonymous: 'always', named: 'never', asyncArrow: 'always' }],
-    'space-in-parens': ['error', 'never'],
-    'func-call-spacing': ['error', 'never'],
-    'react-hooks/rules-of-hooks': 'error',
-    'react-hooks/exhaustive-deps': 'warn',
-    'no-return-assign': 0,
-    'no-console': 0,
-    'jsx-quotes': ['error', 'prefer-double']
-  },
   settings: {
     'import/resolver': {
       webpack: {
