@@ -14,7 +14,7 @@ module.exports = {
     "function-calc-no-unspaced-operator": true,
     "function-comma-space-after": "always",
     "function-url-quotes": "always",
-    "string-quotes": "single",
+    "string-quotes": "double",
     "property-no-vendor-prefix": true,
     "declaration-no-important": true,
     "block-closing-brace-newline-before": "always",

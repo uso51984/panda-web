@@ -7,6 +7,8 @@ import { location } from '@/shared/services/location';
 import locale from '@/shared/services/i18n/locale';
 import Globalize from '@/shared/services/i18n/Globalize';
 
+import './index.less';
+
 /* eslint-disable global-require */
 if (__STATIC__) {
   require('../mock');
