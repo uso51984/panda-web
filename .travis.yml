@@ -6,18 +6,22 @@ addons:
 node_js:
 - 14
 os: linux
+before_install:
+  - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version version-number
+  - export PATH="$HOME/.yarn/bin:$PATH"
+
 cache:
-  npm: true
+  yarn: true
 branches:
   only:
   - master
   - dev
-install:
-- |
-    npm
-script:
-- |
-    npm run eslint && npm run stylelint && npm run test
-after_success:
-- |
-    cat ./test/coverage/lcov.info | ./node_modules/.bin/codecov
+
+jobs:
+  include:
+    - stage: eslint check
+      script: npm run eslint
+    - stage: stylelint check
+      script: npm run stylelint
+    - stage: unit test
+      script: npm run test
