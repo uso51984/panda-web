@@ -7,17 +7,17 @@ node_js:
 - 14
 os: linux
 cache:
-  yarn: true
+  npm: true
 branches:
   only:
   - master
   - dev
 install:
 - |
-    yarn
+    npm
 script:
 - |
-    yarn run eslint && yarn run stylelint && yarn run test
+    npm run eslint && npm run stylelint && npm run test
 after_success:
 - |
     cat ./test/coverage/lcov.info | ./node_modules/.bin/codecov
